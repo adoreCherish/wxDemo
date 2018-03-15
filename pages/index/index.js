@@ -27,19 +27,6 @@ Page({
         })
       }
     })
-    wx.setTabBarItem({
-      index: 0,
-      text: 'text'
-      // iconPath: '/path/to/iconPath',
-      // selectedIconPath: '/path/to/selectedIconPath'
-    })
-    wx.setTabBarStyle({
-      color: '#FF0000',
-      selectedColor: '#00FF00',
-      backgroundColor: '#0000FF',
-      borderStyle: 'white'
-    })
-    wx.showTabBar({})
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -77,6 +64,11 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  addProjectFunc: function() {
+    wx.navigateTo({
+      url: 'addProject/addProject'
     })
   }
 })

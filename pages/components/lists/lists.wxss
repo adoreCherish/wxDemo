@@ -1,0 +1,21 @@
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items:center;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+	/*padding-top: 40rpx;*/
+	height: 110rpx;
+	font-size: 32rpx;
+	border-bottom:1rpx solid #DFE0E4;
+	/*box-sizing: border-box;*/
+}
+.wrapper .label{
+	padding-right: 20rpx;
+	font-family: "PingFangSC-Medium";
+	color: #0f161e;
+}
+.wrapper input{
+	font-family: "PingFangSC-Regular";
+	color: #aaa9ae;
+}

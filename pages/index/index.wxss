@@ -53,50 +53,40 @@
   font-size: 28rpx;
   color: #0f161e;
 }
-.icon{
-  position: absolute;
-  right: 30rpx;
-}
-.icon-add{
-    position: relative;
-    box-sizing: border-box;
-    width: 100rpx;
-    height: 100rpx;
-    /*border: 2px dashed #9a9ba3;*/
-    background-color: #008bd6;
-    border-radius: 50%;
-}
-.icon-add:before{
-    content: '';
-    position: absolute;
-    width: 52rpx;
-    height: 2rpx;
-    left: 50%;
-    top: 50%;
-    margin-left: -26rpx;
-    margin-top: -1rpx;
-    background-color: white;
-}
-.icon-add:after{
-    content: '';
-    position: absolute;
-    width: 2rpx;
-    height: 52rpx;
-    left: 50%;
-    top: 50%;
-    margin-left: -1rpx;
-    margin-top: -26rpx;
-    background-color: white;
-}
-
 /*首页内容end*/
 
 /*首页底部 start*/
-.footer {
+.icon-add{
   position: fixed;
-  height: 98rpx;
+  box-sizing: border-box;
+  width: 100rpx;
+  height: 100rpx;
+  /*border: 2px dashed #9a9ba3;*/
+  background-color: #008bd6;
+  border-radius: 50%;
+  bottom: 30rpx;
+  right: 30rpx;
 }
-.footerMain {
-  border-top:1rpx solid #999999;
+.icon-add:before{
+  content: '';
+  position: absolute;
+  width: 52rpx;
+  height: 4rpx;
+  left: 50%;
+  top: 50%;
+  margin-left: -26rpx;
+  margin-top: -1rpx;
+  background-color: white;
+}
+.icon-add:after{
+  content: '';
+  position: absolute;
+  width: 4rpx;
+  height: 52rpx;
+  left: 50%;
+  top: 50%;
+  margin-left: -1rpx;
+  margin-top: -26rpx;
+  background-color: white;
 }
 /*首页底部 end*/

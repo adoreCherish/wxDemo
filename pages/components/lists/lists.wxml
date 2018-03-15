@@ -1,0 +1,4 @@
+<view wx:for-items="{{lists}}" class="wrapper">
+	<text class="label">{{lists[index].inputTitle}}</text>
+	<input class="weui-input" placeholder="{{lists[index].placeholder}}"/>
+</view>

@@ -1,0 +1,12 @@
+.projectList .title{
+	font-family: "PingFangSC-Medium";
+	color: #0f161e;
+	font-size:28rpx;
+	padding-top: 40rpx;
+	padding-bottom:20rpx;
+	display: block;
+	background-color: #f1f2f6;
+}
+.aaa view:last-child{
+	border-bottom: 0;
+}

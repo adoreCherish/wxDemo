@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/index/addProject/addProject",
     "pages/logs/logs"
   ],
   "window":{
@@ -8,6 +9,19 @@
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "21Days",
     "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#4286f5",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "学习地图"
+    }, {
+      "pagePath": "pages/logs/logs",
+      "text": "个人中心"
+    }]
   },
   "debug": true
 }

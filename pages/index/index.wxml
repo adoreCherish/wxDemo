@@ -1,4 +1,3 @@
-<!--index.wxml-->
 <view class="main">
   <!-- <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
@@ -31,9 +30,9 @@
   
   <!-- 底部 start -->
   <view class="footer">
-    <view class="icon">
-      <view class="icon-add"></view>
+    <view class="icon-add" bindtap="addProjectFunc">
     </view>
   </view>
+  <!-- <button bindtap="linkTo">linkTo</button> -->
   <!-- 底部 end -->
 </view>
