@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="main">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> -->
+  <!-- 头部 start -->
+  <view wx:if="{{hasUserInfo}}" class="userInfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
+    <view>
+      <text class="userInfoNickName">{{userInfo.nickName}}管理员,你好</text>
+      <text class="userDescription">欢迎来到本项目的学习地图</text>
+    </view>
+  </view>
+  <!-- 头部 end -->
+  
+  <!-- 内容 start -->
+  <view class="indexMain">
+    <view wx:if="{{hasProject}}">
+      
+    </view>
+    <view wx:else>
+      <image src="{{userInfo.avatarUrl}}" class="noProjectPic"/>
+      <text class="noProjectText">您还没有任何项目</text>
+    </view>
+  </view>
+  <!-- 内容 end -->
+  
+  <!-- 底部 start -->
+  <view class="footer">
+    <view class="icon">
+      <view class="icon-add"></view>
+    </view>
+  </view>
+  <!-- 底部 end -->
+</view>

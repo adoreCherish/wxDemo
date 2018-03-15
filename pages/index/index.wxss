@@ -1,0 +1,102 @@
+/**index.wxss**/
+.main {
+  font-family: "Microsoft Yahei";
+  /*background-color:#f1f2f6;*/
+  /*height:100%;*/
+}
+/*首页头部start*/
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  /*align-items: center;*/
+  justify-content: flex-start;
+  border-bottom: 20rpx solid #f1f2f6;
+}
+
+.userinfo-avatar {
+  width: 90rpx;
+  height: 90rpx;
+  margin-left: 30rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 50%;
+}
+.userInfoNickName {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  color: #0f161e;
+  display: block;
+  font-family: "PingFangSC-Medium"
+}
+.userDescription{
+  color:#aaa9ae;
+  font-size: 24rpx;
+  font-family: "PingFangSC-Regular"
+}
+/*首页头部end*/
+
+/*首页内容start*/
+.indexMain {
+  display: flex;
+  justify-content:center;
+  min-height:100%;
+}
+.indexMain .noProjectPic{
+  width: 226rpx;
+  height: 226rpx;
+  margin-top: 232rpx;
+  margin-bottom:30rpx;
+  display: block;
+}
+.indexMain .noProjectText {
+  font-family: "PingFangSC-Regular";
+  font-size: 28rpx;
+  color: #0f161e;
+}
+.icon{
+  position: absolute;
+  right: 30rpx;
+}
+.icon-add{
+    position: relative;
+    box-sizing: border-box;
+    width: 100rpx;
+    height: 100rpx;
+    /*border: 2px dashed #9a9ba3;*/
+    background-color: #008bd6;
+    border-radius: 50%;
+}
+.icon-add:before{
+    content: '';
+    position: absolute;
+    width: 52rpx;
+    height: 2rpx;
+    left: 50%;
+    top: 50%;
+    margin-left: -26rpx;
+    margin-top: -1rpx;
+    background-color: white;
+}
+.icon-add:after{
+    content: '';
+    position: absolute;
+    width: 2rpx;
+    height: 52rpx;
+    left: 50%;
+    top: 50%;
+    margin-left: -1rpx;
+    margin-top: -26rpx;
+    background-color: white;
+}
+
+/*首页内容end*/
+
+/*首页底部 start*/
+.footer {
+  position: fixed;
+  height: 98rpx;
+}
+.footerMain {
+  border-top:1rpx solid #999999;
+}
+/*首页底部 end*/
