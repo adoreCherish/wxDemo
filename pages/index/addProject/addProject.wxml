@@ -1,18 +1,16 @@
-<!-- <view>
+<form bindsubmit="formSubmit">
 	<view class="projectList">
-		<text class="label">公司名称:</text>
-		<input class="weui-input" auto-focus placeholder="请输入公司名称"/>
+		<view>
+		  <lists class="lists" lists="{{lists}}" bind:inputValue="getInputVal"></lists>
+		</view>
+		<view>
+			<text class="title">项目时间</text>
+		</view>
+		<view>
+		  <lists hasArrow class="lists" lists="{{time}}" bind:inputValue="getInputVal"></lists>
+		</view>
+		
 	</view>
-</view> -->
-<view class="projectList">
-	<view>
-	  <!-- <lists inputTitle="公司名称:" placeholder="请输入公司名称">
-	  </lists>
-	  <lists inputTitle="项目名称:" placeholder="请输入项目名称">
-	  </lists> -->
-	  <lists class="aaa" lists="{{lists}}"></lists>
-	</view>
-	<view>
-		<text class="title">项目时间</text>
-	</view>
-</view>
+	<!-- <button formType="submit">submit</button> -->
+</form>
+

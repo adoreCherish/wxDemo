@@ -1,6 +1,6 @@
 {
 	"navigationBarTitleText": "创建项目",
 	"usingComponents": {  
-    	"lists": "../../components/lists/lists"  
+    	"lists": "../../components/lists/lists"
 	}
 }

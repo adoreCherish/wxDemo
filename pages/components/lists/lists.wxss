@@ -1,7 +1,7 @@
 .wrapper {
-	display: flex;
+	/*display: flex;
 	flex-direction: row;
-	align-items:center;
+	align-items:center;*/
 	margin-left: 30rpx;
 	margin-right: 30rpx;
 	/*padding-top: 40rpx;*/
@@ -9,13 +9,59 @@
 	font-size: 32rpx;
 	border-bottom:1rpx solid #DFE0E4;
 	/*box-sizing: border-box;*/
+	line-height: 110rpx;
 }
 .wrapper .label{
 	padding-right: 20rpx;
 	font-family: "PingFangSC-Medium";
 	color: #0f161e;
+	float: left;
 }
 .wrapper input{
 	font-family: "PingFangSC-Regular";
 	color: #aaa9ae;
+	float: left;
+	margin-top:28rpx;
+}
+.navigator {
+  padding: 20rpx 30rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  float: right;
+  margin-top:35rpx;
+}
+.navigator:before {
+  content: " ";
+  position: absolute;
+  left: 30rpx;
+  top: 0;
+  right: 30rpx;
+  height: 1px;
+  border-top: 1rpx solid #D8D8D8;
+  color: #D8D8D8;
+}
+.navigator:first-child:before {
+  display: none;
+}
+.navigator-text {
+  /*flex: 1;*/
+}
+.navigator-arrow {
+  /*padding-right: 26rpx;
+  pos*/ition: relative;
+}
+.navigator-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  right: 28rpx;
 }

@@ -6,7 +6,9 @@
 	padding-bottom:20rpx;
 	display: block;
 	background-color: #f1f2f6;
+  padding-left:30rpx;
 }
-.aaa view:last-child{
+.lists view:last-child{
 	border-bottom: 0;
 }
+
