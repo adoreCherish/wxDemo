@@ -21,7 +21,7 @@
 	font-family: "PingFangSC-Regular";
 	color: #aaa9ae;
 	float: left;
-	margin-top:28rpx;
+	margin-top:30rpx;
 }
 .navigator {
   padding: 20rpx 30rpx;
@@ -49,7 +49,7 @@
 }
 .navigator-arrow {
   /*padding-right: 26rpx;
-  pos*/ition: relative;
+  position: relative;*/
 }
 .navigator-arrow:after {
   content: " ";

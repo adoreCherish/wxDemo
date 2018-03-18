@@ -1,31 +1,88 @@
 <view class="main">
-  <!-- <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
+  <view class="userinfo">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <!-- <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view> -->
+    </block> -->
+  </view>
   <!-- 头部 start -->
   <view wx:if="{{hasUserInfo}}" class="userInfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
     <view>
       <text class="userInfoNickName">{{userInfo.nickName}}管理员,你好</text>
-      <text class="userDescription">欢迎来到本项目的学习地图</text>
+      <text wx:if="{{hasProject}}" class="userDescription">欢迎来到<text style="color: #008bd6">员工领导力培训</text></text>
+      <text wx:else class="userDescription">欢迎来到本项目的学习地图</text>
+    </view>
+    <view class="progress" wx:if="{{hasProject}}">
+      <text class="content">1/12</text>
+      <text class="static">进度</text>
     </view>
   </view>
   <!-- 头部 end -->
   
   <!-- 内容 start -->
-  <view class="indexMain">
+  <view>
     <view wx:if="{{hasProject}}">
-      
+      <view class="hasProject">
+        <view class="projectStatus">
+          <view class="header">
+            <text class="left">阶段一</text>
+            <text class="date">(21天)</text>
+            <button class="right">编辑项目</button>
+          </view>
+          <view>
+            <view class='swiper-container'>
+              
+              <view animation= "{{ swiperAnimationData }}" 
+              style='width:{{ swiperContainWidth + "rpx" }}' 
+              bindtouchstart='swiperTouchStart' 
+              bindtouchmove='swiperTouchMove' 
+              bindtouchend='swiperTouchEnd' 
+              class='card-swiper-box' 
+              >
+
+
+              <block wx:for='{{swiperImgUrls}}' wx:key="{{index}}">
+                  <!-- <image src='{{item}}' class='card-item' ></image>  -->
+                  <view class="card-item {{swiperImgUrls[index].status == 0 ? 'card-item0' : 'card-item1'}}">
+                    <image class="timePic" src="../../images/time.png" />
+                    <view class="issue">
+                      <text>{{swiperImgUrls[index].text}}</text>
+                      <image class="location" src="../../images/location.png" />
+                    </view>
+                    <text class="time">{{swiperImgUrls[index].time}}</text>
+                    <button class="status">课时</button>
+                  </view>
+              </block>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="punchCard">
+          <view class="header">
+            <text class="left">我管理的打卡</text>
+          </view>
+          <view class="content">
+            <view class="child">
+              <button class="addNew" bindtap="addNew">创建新的打卡项目</button>
+              <button class="choseFromHistory">
+                <text class="addIcon">+</text>
+                <text>从打卡历史中选择</text>
+            </button>
+            </view>
+          </view>
+        </view>
+      </view>
     </view>
-    <view wx:else>
-      <image src="{{userInfo.avatarUrl}}" class="noProjectPic"/>
-      <text class="noProjectText">您还没有任何项目</text>
+    <view wx:else class="indexMain">
+      <view>
+        <image src="../../images/noProject.png" class="noProjectPic"/>
+        <text class="noProjectText">您还没有任何项目</text>
+      </view>
     </view>
   </view>
+  
   <!-- 内容 end -->
   
   <!-- 底部 start -->

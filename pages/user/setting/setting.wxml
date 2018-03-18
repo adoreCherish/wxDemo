@@ -1,0 +1,37 @@
+<view class="setting">
+	<view class="lists">
+		<view class="img">
+			<image src=""/>
+		</view>
+		<view class="content">
+			<view class="title">
+				<text>员工领导力培训</text>
+			</view>
+			<view class="name">
+				<text>阿里巴巴网络科技(上海)有限公司</text>
+				</view>
+		</view>
+		<view class="edit">
+			<button bindtap="changeSetting">编辑</button>
+		</view>
+	</view>
+	<view wx:if="{{!changeSetting}}" class="code">
+		<view wx:if="{{checked}}" bindtap="checkCode">
+			<text>查看项目二维码</text>
+			<view class="navigator">
+		    <view class="navigator-arrow show"></view>
+		  </view>
+		</view>
+		<view wx:else style="position: relative;">
+			<image src="" style="width:400rpx;height:400rpx;"/>
+		  <view bindtap="checkCode" class="navigator-arrow hide"></view>
+		</view>
+	</view>
+	<view wx:if="{{changeSetting}}" class="changeSetting">
+		<lists class="lists" lists="{{lists}}" bind:inputValue="getInputVal"></lists>
+		<view class="operation">
+			<button class="delete">删除该公司</button>
+			<button class="finish" bindtap="finishFunc">编辑完成</button>
+		</view>
+	</view>
+</view>

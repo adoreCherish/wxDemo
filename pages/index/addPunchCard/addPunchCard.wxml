@@ -1,0 +1,94 @@
+<form class="punchCard">
+	<view>
+	  <lists class="lists" lists="{{lists}}" bind:inputValue="getInputVal"></lists>
+	</view>
+	<view style="position: relative;">
+		<text class="title">打卡主图</text>
+		<view bindtap="chooseImage" class="picture">
+			<button class="icon-add"></button>
+			<text>请选择图片</text>
+		</view>
+	</view>
+	<view>
+		<text class="title">开始结束时间</text>
+		<picker class="picker" mode="date" value="startTime" bindchange="startTimedataChange">
+	    <view>
+	      <text class="text" wx:if="{{startTime}}">{{startTime}}</text>
+	    	<text class="text" wx:else>请选择开始时间</text>
+	    	<view class="navigator">
+			    <view class="navigator-arrow"></view>
+			</view>
+	    </view>
+		</picker>
+		<picker class="picker" mode="date" value="endTime" bindchange="startTimedataChange">
+	    <view>
+	      <text class="text" wx:if="{{endTime}}">{{endTime}}</text>
+	    	<text class="text" wx:else>请选择结束时间</text>
+	    	<view class="navigator">
+			    <view class="navigator-arrow"></view>
+			</view>
+	    </view>
+		</picker>
+	</view>
+	<view class="specailPicker">
+		<picker class="picker" range="{{punchCardFrequency}}" value="{{punchCardFrequencyIndex}}" bindchange="bindpunchCardFrequency">
+	    <view style="overflow: hidden;">
+	    	<text class="label" >打卡频率:</text>
+	    	<view class="navigator">
+	    		<view class="navigator-text">{{punchCardFrequency[punchCardFrequencyIndex]}}</view>
+			    <view class="navigator-arrow"></view>
+			</view>
+	    </view>
+		</picker>
+		<picker class="picker" range="{{punchCardRequire}}" value="{{punchCardRequireIndex}}" bindchange="bindpunchCardRequire">
+	    <view style="overflow: hidden;">
+	    	<text class="label" >打卡要求:</text>
+	    	<view class="navigator">
+	    		<view class="navigator-text">{{punchCardRequire[punchCardRequireIndex]}}</view>
+			    <view class="navigator-arrow"></view>
+			</view>
+	    </view>
+		</picker>
+		<picker class="picker" range="{{punchCardMust}}" value="{{punchCardMustIndex}}" bindchange="bindpunchCardMust">
+	    <view style="overflow: hidden;">
+	    	<text class="label" >是否必选:</text>
+	    	<view class="navigator">
+	    		<view class="navigator-text">{{punchCardMust[punchCardMustIndex]}}</view>
+			    <view class="navigator-arrow"></view>
+			</view>
+	    </view>
+		</picker>
+		<picker class="picker" range="{{punchCardChose}}" value="{{punchCardChoseIndex}}" bindchange="bindpunchCardChose">
+	    <view style="overflow: hidden;">
+	    	<text class="label" >所选阶段:</text>
+	    	<view class="navigator">
+	    		<view class="navigator-text">{{punchCardChose[punchCardChoseIndex]}}</view>
+			    <view class="navigator-arrow"></view>
+			</view>
+	    </view>
+		</picker>
+	</view>
+	<view class="punchCardContent">
+		<text class="title">打卡内容</text>
+		<view class="content">
+			<textarea auto-focus="true" />
+		</view>
+		<view class="function">
+			<view>
+				<image src=""/>
+				<text>拍照</text>
+			</view>
+			<view>
+				<image src=""/>
+				<text>语音</text>
+			</view>
+			<view>
+				<image src=""/>
+				<text>视频</text>
+			</view>
+		</view>
+	</view>
+	<view class="footer">
+		<button>发布</button>
+	</view>
+</form>

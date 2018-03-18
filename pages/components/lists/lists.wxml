@@ -1,6 +1,5 @@
 <view 
-wx:key="{{index}}" 
-id="{{index}}" 
+wx:key="{{index}}"
 wx:for-items="{{lists}}" 
 class="wrapper"
 >
@@ -13,7 +12,7 @@ class="wrapper"
   maxlength="{{lists[index].maxlength}}" 
   placeholder="{{lists[index].placeholder}}"
   />
-  <view wx:if="{{hasArrow}}"class="navigator">
+  <view wx:if="{{hasArrow}}" class="navigator">
     <view class="navigator-text">{{page}}</view>
     <view class="navigator-arrow"></view>
   </view>

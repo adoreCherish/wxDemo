@@ -6,20 +6,28 @@ Page({
   data: {
     lists: [{
       "name" : "CN",
-    	"inputTitle" : '公司名称',
-    	"placeholder" : "请输入公司名称",
+    	"inputTitle" : '活动名称:',
+    	"placeholder" : "请输入活动标题",
       "maxlength" : "5",
       "type": "text"
     },{
       "name" : "PN",
-    	"inputTitle" : '项目名称',
-    	"placeholder" : "请输入项目名称",
+    	"inputTitle" : '打卡介绍:',
+    	"placeholder" : "请输入活动主题",
       "maxlength" : "10",
       "type": "text"
     }],
     submitAllData: [],
     startTime: '',
-    endTime: ''
+    endTime: '',
+    punchCardFrequency: ['天', '周', '月'],
+    punchCardRequire:['无','必须音频','必须图片','必须视频'],
+    punchCardMust:['必选','不必选'],
+    punchCardChose:['阶段一'],
+    punchCardFrequencyIndex: 0,
+    punchCardRequireIndex: 0,
+    punchCardMustIndex:0,
+    punchCardChoseIndex:0
   },
   getInputVal: function(e) {
     this.data.submitAllData.push(e.detail)
@@ -64,6 +72,30 @@ Page({
   addNewStage:function(){
     wx.navigateTo({
       url: 'stage/stage'
+    })
+  },
+  bindpunchCardFrequency: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      punchCardFrequencyIndex: e.detail.value
+    })
+  },
+  bindpunchCardRequire:function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      punchCardRequireIndex: e.detail.value
+    })
+  },
+  bindpunchCardMust:function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      punchCardMustIndex: e.detail.value
+    })
+  },
+  bindpunchCardChose:function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      punchCardChoseIndex: e.detail.value
     })
   },
   chooseImage:function(){

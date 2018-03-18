@@ -1,7 +1,11 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/user/setting/setting",
+    "pages/user/user",
+    "pages/index/addPunchCard/addPunchCard",
     "pages/index/addProject/addProject",
+    "pages/index/addProject/stage/stage",
     "pages/logs/logs"
   ],
   "window":{
@@ -17,10 +21,14 @@
     "borderStyle": "black",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "学习地图"
+      "text": "学习地图",
+      "iconPath": "./images/map-unchoose.png",
+      "selectedIconPath":"./images/map.png"
     }, {
-      "pagePath": "pages/logs/logs",
-      "text": "个人中心"
+      "pagePath": "pages/user/user",
+      "text": "个人中心",
+      "iconPath": "./images/user-unchoose.png",
+      "selectedIconPath":"./images/user.png"
     }]
   },
   "debug": true

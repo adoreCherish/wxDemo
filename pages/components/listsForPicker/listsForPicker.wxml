@@ -1,0 +1,6 @@
+  <picker mode="" value="listsForPicker[index][0]" bindchange="dataChange">
+    <view class="picker">
+      <text wx:if="{{listsForPicker[index][0]}}">{{listsForPicker[index][0]}}</text>
+    	<text wx:else>{{listsForPicker[index].placeholder}}</text>
+    </view>
+  </picker>

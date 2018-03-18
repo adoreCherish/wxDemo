@@ -5,12 +5,47 @@
 		</view>
 		<view>
 			<text class="title">项目时间</text>
+			<picker class="picker" mode="date" value="startTime" bindchange="startTimedataChange">
+			    <view>
+			      <text class="text" wx:if="{{startTime}}">{{startTime}}</text>
+			    	<text class="text" wx:else>请选择开始时间</text>
+			    	<view class="navigator">
+					    <view class="navigator-arrow"></view>
+					</view>
+			    </view>
+	  		</picker>
+		  	<picker class="picker" mode="date" value="endTime" bindchange="endTimedataChange">
+			    <view>
+			      <text class="text" wx:if="{{endTime}}">{{endTime}}</text>
+			    	<text class="text" wx:else>请选择结束时间</text>
+			    	<view class="navigator">
+					    <view class="navigator-arrow"></view>
+					  </view>
+			    </view>
+		  	</picker>
+		</view>
+		<view style="position: relative;">
+			<text class="title">项目图片</text>
+			<view bindtap="chooseImage" class="picture">
+				<button class="icon-add"></button>
+				<text>请选择图片</text>
+			</view>
 		</view>
 		<view>
-		  <lists hasArrow class="lists" lists="{{time}}" bind:inputValue="getInputVal"></lists>
+			<text class="title">项目介绍</text>
+			<view class="discription">
+				<textarea auto-focus="true" />
+			</view>
 		</view>
-		
+		<view class="footer">
+			<view class="footerMessage">
+				<text class="text">阶段一</text>
+				<view class="navigator">
+			    <view class="navigator-arrow"></view>
+			  </view>
+			</view>
+			<button class="addNew" bindtap="addNewStage" type="primary">新增阶段</button>
+		</view>
 	</view>
-	<!-- <button formType="submit">submit</button> -->
 </form>
 

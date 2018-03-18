@@ -1,0 +1,71 @@
+<view class="userCenter">
+	<view>
+		<view>
+			<view class="header">
+				<view class="tx">
+					<image src=""/>
+				</view>
+				<view class="content">
+					<text>牛仔裤褪色了</text>
+				</view>
+				<view class="position">
+					<text>管理员</text>
+				</view>
+			</view>
+			<view class="background"></view>
+		</view>
+		<view class="slot">
+			<view class="one">
+				<view>
+					<image />
+				</view>
+				<view class="oneText">
+					<text>个人积分</text>
+				</view>
+				<view>
+					<text>排行榜</text>
+				</view>
+			</view>
+			<view class="sx"></view>
+			<view class="two">
+				<view>
+					<image />
+				</view>
+				<view class="twoText">
+					<text>小组积分</text>
+				</view>
+				<view>
+					<text>排行榜</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view>
+		<view class="container">
+			<view class="lists">
+				<image />
+				<text>我的发布记录</text>
+			</view>
+		</view>
+		<view class="container">
+			<view class="lists">
+				<image />
+				<text>消息通知</text>
+			</view>
+		</view>
+		<view class="container">
+			<view bindtap="gotoSettings" class="lists">
+				<image />
+				<text>设置</text>
+			</view>
+		</view>
+	</view>
+	<view class="footer">
+		<view class="name">
+			<text>炎炎科技</text>
+		</view>
+		<view class="version">
+			<text>由炎炎科技提供v1.0版</text>
+		</view>
+	</view>
+</view>

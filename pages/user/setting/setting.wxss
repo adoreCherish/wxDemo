@@ -1,0 +1,116 @@
+.setting image{
+	width:42rpx;
+	height: 42rpx;
+	border: 1rpx solid red;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+}
+.setting .lists{
+	margin-top: 30rpx;
+	overflow: hidden;
+}
+.setting .lists .img{
+	float: left;
+}
+.setting .lists .content{
+	float: left;
+	font-family: "PingFangSC";
+}
+.setting .lists .content .title{
+	font-size: 32rpx;
+	color: #0f161e;
+}
+.setting .lists .content .name{
+	font-size: 28rpx;
+	color: #aaa8ae;
+	/*margin-top: 20rpx;*/
+}
+.setting .lists .edit{
+	float: right;
+	margin-right: 30rpx;
+	margin-top: 15rpx;
+}
+.setting .lists .edit button{
+	width: 100rpx;
+	height: 50rpx;
+	font-family: "PingFangSC";
+	font-size: 28rpx;
+	color: white;
+	background-color: #4286F5;
+	line-height: 50rpx;
+	padding: 0;
+	box-shadow: 0 10rpx 10rpx rgba(66,134,245,0.2);
+}
+.setting .code{
+	margin-top: 60rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.setting .code text{
+	color: #4286F5;
+	font-size: 28rpx;
+}
+.setting .code .navigator {
+  padding: 20rpx 30rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  float: right;
+  /*margin-top:35rpx;*/
+  margin-top: 0;
+}
+.setting .code .navigator-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 20rpx;
+  width: 20rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #4286F5;
+  border-style: solid;
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  /*right: 28rpx;*/
+}
+.setting .code .navigator-arrow.show:after {
+  transform: matrix(0.71, 0.71, 0.71, -0.71, 0, 0);
+}
+.setting .code .navigator-arrow.hide:after{
+	transform: matrix(0.71, -0.71, 0.71, 0.71, 0, 0);
+	top: 105%;
+	left: 50%;
+}
+/*.setting .lists view:last-child{
+	border-bottom: 0;
+}*/
+.setting .changeSetting{
+	margin-top: 60rpx;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+	box-shadow:0 0 20rpx 20rpx #F6F9FE;
+}
+.setting .changeSetting .operation{
+	margin-top: 50rpx;
+}
+.setting .changeSetting .operation button{
+	font-family: "PingFangSC";
+	font-size: 28rpx;
+	padding: 0;
+	height: 60rpx;
+	line-height: 60rpx;
+	display: inline-block;
+	background-color:white;
+	margin-left: 30rpx;
+	margin-bottom: 50rpx;
+}
+.setting .changeSetting .operation .delete{
+	color: #4286f5;
+	border: 1rpx solid #4286f5;
+	width: 180rpx;
+}
+.setting .changeSetting .operation .finish{
+	color: #3eb85f;
+	border: 1rpx solid #3eb85f;
+	width: 160rpx;
+}

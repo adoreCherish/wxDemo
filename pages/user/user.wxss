@@ -1,0 +1,123 @@
+.userCenter .header{
+	height: 280rpx;
+	/*width: 1000rpx;*/
+	background-color: #608FED;
+	/*display: flex;
+	justify-content: center;
+	align-items: center;*/
+}
+.userCenter .background{
+	height: 79rpx;
+	border-bottom-left-radius: 100%;
+	border-bottom-right-radius: 100%;
+	background-color: #608FED;
+	margin-top: -6rpx;
+	box-shadow:0 20rpx 0 rgba(255,255,255,0.2);
+}
+.userCenter .header image{
+	width: 184rpx;
+	height: 184rpx;
+	border: 1rpx solid black;
+}
+.userCenter .header .tx{
+	padding-top: 16rpx;
+}
+.userCenter .header .tx,.userCenter .header .content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.userCenter .header .content{
+	margin-top: 30rpx;
+	font-size: 36rpx;
+	font-family: "PingFangSC";
+	color: white;
+	/*color: */
+}
+.userCenter .header  .position{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20rpx;
+	font-size: 28rpx;
+	font-family: "PingFangSC";
+	color: white;
+}
+.userCenter .slot{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 30rpx;
+}
+.userCenter .slot image{
+	width:40rpx;
+	height: 60rpx;
+	border: 1rpx solid red;
+}
+.userCenter .slot .one{
+	margin-right: 160rpx;
+}
+.userCenter .slot .two{
+	margin-left: 160rpx;
+}
+.userCenter .slot .one,.userCenter .slot .two{
+	margin-top: 20rpx;
+	font-family: "PingFangSC";
+	font-size: 28rpx;
+}
+.userCenter .slot .one .oneText,.userCenter .slot .two .twoText{
+	margin-top: 20rpx;
+}
+.userCenter .slot .sx{
+	border: 1rpx solid #E5E5E5;
+	width: 1rpx;
+	height: 80rpx;
+}
+.userCenter .container .lists{
+	height: 110rpx;
+	line-height: 110rpx;
+	border-top: 20rpx solid #E5E5E5;
+	width: 100%;
+	overflow: hidden;
+}
+.userCenter .container .lists text{
+	font-family: "PingFangSC";
+	font-size: 28rpx;
+	color: #0f161e;
+	float: left;
+}
+.userCenter .container .lists image{
+	width:40rpx;
+	height: 40rpx;
+	border: 1px solid red;
+	margin-left: 40rpx;
+	margin-right: 40rpx;
+	float: left;
+	margin-top: 36rpx;
+}
+.userCenter .footer{
+	background-color: #E5E5E5;
+	padding-top: 60rpx;
+	padding-bottom: 60rpx;
+	/*display: flex;
+	justify-content: center;
+	align-items: center;*/
+}
+.userCenter .name,.userCenter .version{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.userCenter .name text{
+	font-size: 28rpx;
+	font-family: "PingFangSC";
+	color: #0f161e;
+	display: block;
+}
+.userCenter .version text{
+	font-size: 24rpx;
+	font-family: "PingFangSC-Regular";
+	color: #aaa9ae;
+	margin-top:20rpx;
+}

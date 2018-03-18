@@ -1,3 +1,7 @@
+.projectList{
+  /*background-color: #f1f2f6;*/
+}
+/*lists start*/
 .projectList .title{
 	font-family: "PingFangSC-Medium";
 	color: #0f161e;
@@ -11,4 +15,175 @@
 .lists view:last-child{
 	border-bottom: 0;
 }
+/*list end*/
 
+/*list picker*/
+.projectList .picker{
+	height:110rpx;
+	line-height: 110rpx;
+	border-bottom:1rpx solid #DFE0E4;
+	margin-left:30rpx;
+	margin-right:30rpx;
+}
+.projectList .picker:last-child{
+  border-bottom:0;
+}
+.projectList .picker .text{
+	font-family: "PingFangSC-Regular";
+	color: #aaa9ae;
+	font-size: 32rpx;
+}
+.picker .navigator {
+  padding: 20rpx 30rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  float: right;
+  margin-top:35rpx;
+}
+.picker .navigator:before {
+  content: " ";
+  position: absolute;
+  left: 30rpx;
+  top: 0;
+  right: 30rpx;
+  height: 1px;
+  border-top: 1rpx solid #D8D8D8;
+  color: #D8D8D8;
+}
+.picker .navigator:first-child:before {
+  display: none;
+}
+.navigator-text {
+  /*flex: 1;*/
+}
+.navigator-arrow {
+  /*padding-right: 26rpx;
+  /*position: relative;*/
+}
+.picker .navigator-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  /*right: 28rpx;*/
+  right:4rpx;
+}
+/*picker end*/
+
+/*picture start*/
+.projectList .picture{
+  height: 220rpx;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+}
+.projectList .picture text{
+  color: #aaa9ae;
+  font-size: 24rpx;
+  font-family: "PingFangSC-Regular";
+  position: relative;
+  margin-top: 60rpx;
+}
+.projectList .picture .icon-add{
+  position: absolute;
+  box-sizing: border-box;
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: -20rpx;
+  /*border: 2px dashed #9a9ba3;*/
+  /*background-color: #008bd6;*/
+  background-color: transparent;
+  /*border-radius: 50%;*/
+  /*bottom: 30rpx;*/
+  /*right: 30rpx;*/
+}
+.projectList .picture .icon-add:before{
+  content: '';
+  position: absolute;
+  width: 42rpx;
+  height: 4rpx;
+  left: 50%;
+  top: 50%;
+  margin-left: -20rpx;
+  margin-top: -1rpx;
+  background-color: #aaa9ae;
+}
+.projectList .picture .icon-add:after{
+  content: '';
+  position: absolute;
+  width: 8rpx;
+  height: 84rpx;
+  left: 50%;
+  top: 50%;
+  margin-left: -1rpx;
+  margin-top: -20rpx;
+  background-color: #aaa9ae;
+}
+/*picture end*/
+
+/*discription start*/
+.projectList .discription textarea{
+  height: 220rpx;
+  width: 100%;
+}
+/*discription end*/
+.projectList .footer{
+  margin-top:62rpx;
+  background-color: #f1f2f6;
+  height: 280rpx;
+}
+.projectList .footer .navigator{
+  /*padding: 20rpx 30rpx;*/
+  padding-top:62rpx;
+  position: relative;
+  /*display: flex;*/
+  /*align-items: center;*/
+  float: left;
+  /*margin-top:35rpx;*/
+  /*float: right;*/
+}
+.projectList .footer .navigator-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 23rpx;
+  width: 23rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #008bd6;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  /*top: 50%;*/
+  margin-top: 10rpx;
+  /*right: 28rpx;*/
+  /*right:4rpx;*/
+}
+.projectList .footer .footerMessage{
+  overflow: hidden;
+  color: #008bd6;
+}
+.projectList .footer .text{
+  padding-top:62rpx;
+  font-size: 32rpx;
+  /*margin-right: 20rpx;*/
+  /*display: block;*/
+  float: left;
+  margin-left: 30rpx;
+
+}
+.projectList .footer .addNew{
+  margin-left:30rpx;
+  margin-right: 30rpx;
+  margin-top: 62rpx;
+  margin-bottom: 30rpx;
+  background-color: #3bb35b;
+  border-radius: 5rpx;
+}

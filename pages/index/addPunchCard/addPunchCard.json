@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "新建打卡",
+	"usingComponents": { 
+		"lists": "../../components/lists/lists"
+	}
+}
