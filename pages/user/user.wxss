@@ -51,12 +51,17 @@
 	margin-bottom: 30rpx;
 }
 .userCenter .slot image{
-	width:40rpx;
-	height: 60rpx;
-	border: 1rpx solid red;
+	height: 58rpx;
+	/*border: 1rpx solid red;*/
 }
 .userCenter .slot .one{
 	margin-right: 160rpx;
+}
+.userCenter .slot .one image{
+	width: 50rpx;
+}
+.userCenter .slot .two image{
+	width: 62rpx;
 }
 .userCenter .slot .two{
 	margin-left: 160rpx;
@@ -80,6 +85,9 @@
 	border-top: 20rpx solid #E5E5E5;
 	width: 100%;
 	overflow: hidden;
+	display: flex;
+	/*justify-content: center;*/
+	align-items: center;
 }
 .userCenter .container .lists text{
 	font-family: "PingFangSC";
@@ -88,13 +96,26 @@
 	float: left;
 }
 .userCenter .container .lists image{
-	width:40rpx;
-	height: 40rpx;
-	border: 1px solid red;
+	width:42rpx;
+	height: 42rpx;
+	/*border: 1px solid red;*/
 	margin-left: 40rpx;
 	margin-right: 40rpx;
 	float: left;
-	margin-top: 36rpx;
+	/*margin-top: 36rpx;*/
+}
+.userCenter .container .lists .listMessage{
+	width: 42rpx;
+	height: 42rpx;
+	font-family: "PingFangSC";
+	font-size: 24rpx;
+	border-radius: 100%;
+	color: white;
+	background-color: #f24137;
+	line-height: 42rpx;
+	margin-right: 30rpx;
+	padding: 0;
+	float: right;
 }
 .userCenter .footer{
 	background-color: #E5E5E5;

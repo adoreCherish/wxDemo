@@ -162,11 +162,24 @@
 .punchCard .punchCardContent .function  view{
 	text-align: center;
 	margin-bottom: 35rpx;
+  width: 33%;
 }
 .punchCard .punchCardContent .function image{
-	width: 40rpx;
+	/*width: 40rpx;
 	height: 40rpx;
-	border: 1px solid red;
+	border: 1px solid red;*/
+}
+.punchCard .punchCardContent .function .camera{
+  width: 52rpx;
+  height: 42rpx;
+}
+.punchCard .punchCardContent .function .sound{
+  width: 34rpx;
+  height: 52rpx;
+}
+.punchCard .punchCardContent .function .video{
+  width: 42rpx;
+  height: 37rpx;
 }
 .punchCard .punchCardContent .function text{
 	display: block;

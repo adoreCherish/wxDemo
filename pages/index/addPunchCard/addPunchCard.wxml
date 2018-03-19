@@ -71,19 +71,20 @@
 	<view class="punchCardContent">
 		<text class="title">打卡内容</text>
 		<view class="content">
-			<textarea auto-focus="true" />
+			<!-- auto-focus="true" -->
+			<textarea placeholder="请输入打卡内容" placeholder-style="font-family:'PingFangSC-Regular';font-size:24rpx;color:#aaa9ae;"/>
 		</view>
 		<view class="function">
 			<view>
-				<image src=""/>
+				<image class="camera" src="../../../images/camera.png"/>
 				<text>拍照</text>
 			</view>
 			<view>
-				<image src=""/>
+				<image class="sound" src="../../../images/sound.png"/>
 				<text>语音</text>
 			</view>
 			<view>
-				<image src=""/>
+				<image class="video" src="../../../images/video.png"/>
 				<text>视频</text>
 			</view>
 		</view>

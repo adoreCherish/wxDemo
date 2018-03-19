@@ -17,7 +17,7 @@
 		<view class="slot">
 			<view class="one">
 				<view>
-					<image />
+					<image src="../../images/userSetting.png"/>
 				</view>
 				<view class="oneText">
 					<text>个人积分</text>
@@ -29,7 +29,7 @@
 			<view class="sx"></view>
 			<view class="two">
 				<view>
-					<image />
+					<image src="../../images/usersSetting.png"/>
 				</view>
 				<view class="twoText">
 					<text>小组积分</text>
@@ -43,19 +43,20 @@
 	<view>
 		<view class="container">
 			<view class="lists">
-				<image />
+				<image src="../../images/userJL.png"/>
 				<text>我的发布记录</text>
 			</view>
 		</view>
 		<view class="container">
 			<view class="lists">
-				<image />
+				<image src="../../images/userMessage.png"/>
 				<text>消息通知</text>
+				<button class="listMessage">1</button>
 			</view>
 		</view>
 		<view class="container">
 			<view bindtap="gotoSettings" class="lists">
-				<image />
+				<image src="../../images/userSet.png"/>
 				<text>设置</text>
 			</view>
 		</view>

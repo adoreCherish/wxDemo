@@ -34,7 +34,8 @@
 		<view>
 			<text class="title">项目介绍</text>
 			<view class="discription">
-				<textarea auto-focus="true" />
+				<!--  auto-focus="true"  -->
+				<textarea/>
 			</view>
 		</view>
 		<view class="footer">
