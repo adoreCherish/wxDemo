@@ -5,6 +5,10 @@ const app = getApp()
 Page({
   data: {
     
+  },
+  publishFunc:function(){
+    wx.navigateBack({
+      delta: 1
+    })
   }
-  
 })

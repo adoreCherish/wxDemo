@@ -1,11 +1,11 @@
-<view class="main">
-  <view class="userinfo">
+<view class="main" style='background-color:{{hasProject ? "#f1f2f6" : "white"}}'>
+  <!-- <view class="userinfo">
     <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <!-- <block wx:else>
+    <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block> -->
-  </view>
+    </block>
+  </view> -->
   <!-- 头部 start -->
   <view wx:if="{{hasUserInfo}}" class="userInfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
@@ -58,21 +58,126 @@
               </view>
             </view>
           </view>
+          <!-- 时间轴 -->
+          <view>
+            <view class='order_process'>
+              <view class='process_wrap' wx:for="{{processData}}" wx:key="{{index}}">
+                <view class='process'>
+                  <block wx:for="{{fixation}}" wx:key="{{index}}">
+                    <view class='process_line' style="background:{{item.start}}"></view>
+                    <image bindtap="bindPunchCard" class='process_icon' src="../../images/timerShaft.png"></image>
+                    <image wx:if="{{bindPunchCard}}" class="location" src="../../images/location.png" />
+                    <view class='process_line' style="background:{{item.end}}">
+                      <view wx:if="{{fixation[index] == '2'}}" class="transform">-----</view>
+                    </view>
+                  </block>
+                </view>
+                <text class='process_name'>{{item.name}}</text>
+              </view>
+            </view>
+          </view>
         </view>
-        <view class="punchCard">
+        <view class="punchCard" wx:if="{{bindPunchCard || bindPunchCardList.length > 0}}">
           <view class="header">
             <text class="left">我管理的打卡</text>
+            <view class="left subTitle">
+              <text>学生需加入<text class="number">1</text>个,已加入</text><text class="number">1</text>个
+            </view>
+            <view class="right">
+              <button>编辑</button>
+            </view>
+          </view>
+          <view class="stage">
+            <view class="stageHead">
+              <text>阶段一</text>
+            </view>
+            <view style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
+              <image class="stageImg" src=""/>
+              <view class="stageContent">
+                <view class="stageContent-name">
+                  <text>我是活动打卡名</text>
+                </view>
+                <view class="stageContent-content">
+                  <text>我是介绍</text>
+                </view>
+                <view>
+                  <button style="border:1rpx solid {{mustChoise ? '#4286f5;' : '#3eb85f;'}} color:{{mustChoise ? '#4286f5;' : '#3eb85f;'}}" class="choise">必选</button>
+                </view>
+              </view>
+              <view class="operation">
+                <image src="../../images/delete.png"/>
+              </view>
+            </view>
+            <view style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
+              <image class="stageImg" src=""/>
+              <view class="stageContent">
+                <view class="stageContent-name">
+                  <text>我是活动打卡名</text>
+                </view>
+                <view class="stageContent-content">
+                  <text>我是介绍</text>
+                </view>
+                <view>
+                  <button style="border:1rpx solid {{mustChoise ? '#4286f5;' : '#3eb85f;'}} color:{{mustChoise ? '#4286f5;' : '#3eb85f;'}}" class="choise">必选</button>
+                </view>
+              </view>
+              <view class="operation">
+                <image src="../../images/delete.png"/>
+              </view>
+            </view>
+          </view>
+          <view class="stage">
+            <view class="stageHead">
+              <text>阶段二</text>
+            </view>
+            <view style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
+              <image class="stageImg" src=""/>
+              <view class="stageContent">
+                <view class="stageContent-name">
+                  <text>我是活动打卡名</text>
+                </view>
+                <view class="stageContent-content">
+                  <text>我是介绍</text>
+                </view>
+                <view>
+                  <button class="choise">必选</button>
+                </view>
+              </view>
+              <view class="operation">
+                <image src="../../images/delete.png"/>
+              </view>
+            </view>
+            <view style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
+              <image class="stageImg" src=""/>
+              <view class="stageContent">
+                <view class="stageContent-name">
+                  <text>我是活动打卡名</text>
+                </view>
+                <view class="stageContent-content">
+                  <text>我是介绍</text>
+                </view>
+                <view>
+                  <button class="choise">必选</button>
+                </view>
+              </view>
+              <view class="operation">
+                <image src="../../images/delete.png"/>
+              </view>
+            </view>
           </view>
           <view class="content">
             <view class="child">
               <button class="addNew" bindtap="addNew">创建新的打卡项目</button>
-              <button class="choseFromHistory">
+              <button bindtap="historyPunchCardFunc" class="choseFromHistory">
                 <text class="addIcon">+</text>
                 <text>从打卡历史中选择</text>
             </button>
             </view>
           </view>
         </view>
+        <!-- <view wx:else style="height: 378rpx;background-color: #f1f2f6">
+          
+        </view> -->
       </view>
     </view>
     <view wx:else class="indexMain">
@@ -86,7 +191,7 @@
   <!-- 内容 end -->
   
   <!-- 底部 start -->
-  <view class="footer">
+  <view class="footer" wx:if="{{!bindPunchCard}}">
     <view class="icon-add" bindtap="addProjectFunc">
     </view>
   </view>

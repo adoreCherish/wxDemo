@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/index/historyPunchCard/historyPunchCard",
     "pages/user/setting/setting",
     "pages/user/user",
     "pages/index/addPunchCard/addPunchCard",

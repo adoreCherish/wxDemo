@@ -161,7 +161,7 @@ var Swiper
 const conf = {
   data: {
     userInfo: {},
-    hasUserInfo: true,
+    hasUserInfo: false,
     hasProject: true,
     /*** 图片区域****/
     // swiper 容器宽度
@@ -176,15 +176,29 @@ const conf = {
       'text':'知识分享',
       'time':'3.14',
       'status': '0'
-    },{
-      'text':'时间管理',
-      'time':'3.15',
-      'status': '1'
-    },{
-      'text':'疯狂学习',
-      'time':'3.16',
-      'status': '1'
-    }]
+      },{
+        'text':'时间管理',
+        'time':'3.15',
+        'status': '1'
+      },{
+        'text':'疯狂学习',
+        'time':'3.16',
+        'status': '1'
+    }],
+    processData: [{
+      name: '知识分享',
+      start: '#fff',
+      end: '#EFF3F6'
+    },
+    {
+      name: '时间管理',
+      start: '#EFF3F6',
+      end: '#fff'
+    }],
+    fixation:[0,1,2],
+    bindPunchCard:false,
+    bindPunchCardList:[],
+    mustChoise: true
   },
   onLoad(){
     this.initSwiper()
@@ -245,6 +259,44 @@ const conf = {
   addNew: function (){
     wx.navigateTo({
       url: 'addPunchCard/addPunchCard'
+    })
+  },
+  historyPunchCardFunc:function(){
+    wx.navigateTo({
+      url: 'historyPunchCard/historyPunchCard'
+    })
+  },
+  //进度条的状态
+  setPeocessIcon: function () {
+    var index = 0//记录状态为1的最后的位置
+    var processArr = this.data.processData
+    // console.log("progress", this.data.detailData.progress)
+    for (var i = 0; i < this.data.detailData.progress.length; i++) {
+      var item = this.data.detailData.progress[i]
+      processArr[i].name = item.word
+      if (item.state == 1) {
+        index = i
+        processArr[i].icon = "../../img/process_3.png"
+        processArr[i].start = "#45B2FE"
+        processArr[i].end = "#45B2FE"
+      } else {
+        processArr[i].icon = "../../img/process_1.png"
+        processArr[i].start = "#EFF3F6"
+        processArr[i].end = "#EFF3F6"
+      }
+    }
+    processArr[index].icon = "../../img/process_2.png"
+    processArr[index].end = "#EFF3F6"
+    processArr[0].start = "#fff"
+    processArr[this.data.detailData.progress.length - 1].end = "#fff"
+    this.setData({
+      processData: processArr
+    })
+  },
+  //打卡
+  bindPunchCard: function () {
+    this.setData({
+      bindPunchCard:true
     })
   },
   onShow(){

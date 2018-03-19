@@ -89,6 +89,6 @@
 		</view>
 	</view>
 	<view class="footer">
-		<button>发布</button>
+		<button bindtap="gotoIndex">发布</button>
 	</view>
 </form>

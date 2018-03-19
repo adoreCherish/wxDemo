@@ -180,6 +180,6 @@
 	</view>
 	<!-- 课后部分 end -->
 	<!-- 发布  -->
-	<button type="primary" class="publish">发布</button>
+	<button type="primary" bindtap="publishFunc" class="publish">发布</button>
 	<!-- 发布 edn -->
 </view>

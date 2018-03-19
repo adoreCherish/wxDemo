@@ -135,5 +135,10 @@ Page({
         console.log('chooseImage fail, err is', errMsg)
       }
     })
+  },
+  gotoIndex:function(){
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
   }
 })

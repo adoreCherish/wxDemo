@@ -1,8 +1,11 @@
 /**index.wxss**/
+page{
+  /*background-color:#f1f2f6;*/
+}
 .main {
   font-family: "Microsoft Yahei";
-  /*background-color:#f1f2f6;*/
-  /*height:100%;*/
+  /*background-color:white;*/
+  height:100%;
 }
 /*首页头部start*/
 .userInfo {
@@ -12,6 +15,7 @@
   justify-content: flex-start;
   border-bottom: 20rpx solid #f1f2f6;
   position: relative;
+  background-color: white;
 }
 
 .userinfo-avatar {
@@ -57,6 +61,9 @@
 /*首页头部end*/
 
 /*首页内容start*/
+.hasProject {
+  background-color:white; 
+}
 .hasProject .projectStatus .header{
   margin-left: 30rpx;
   margin-right: 30rpx;
@@ -95,6 +102,54 @@
   right: 0rpx;
   top: 20rpx;
 }
+.order_process {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10rpx 10rpx 20rpx 10rpx;
+  background-color: #fff;
+}
+
+.process_wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+
+.process {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.process_icon {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.process_line {
+  background: #eff3f6;
+  flex: 1;
+  height: 5rpx;
+}
+
+.process_name {
+  font-size: 24rpx;
+  margin-top: 36rpx;
+}
+.process .transform{
+  transform:rotate(90deg);
+  margin-left:-64rpx;
+  margin-top:54rpx;
+  font-size:22rpx;
+  color: #3eb85f;
+}
+.process .location{
+  width: 23rpx;
+  height: 32rpx;
+  margin-left:-21rpx;
+  margin-top:-30rpx;
+}
 .hasProject .punchCard{
   border-top: 20rpx solid #f1f2f6;
 }
@@ -115,13 +170,13 @@
   font-size: 32rpx;
   font-family: "PingFangSC-Medium";
   color: #0f161e;
-  border-bottom: 1rpx solid #aaa9ae;
+  border-bottom: 1rpx solid #f1f2f6;
   margin-left: 30rpx;
   margin-right: 30rpx;
-  height: 90rpx;
-  line-height: 90rpx;
+  height: 120rpx;
+  line-height: 120rpx;
 }
-.hasProject .punchCard button{
+.hasProject .punchCard .addNew,.hasProject .punchCard .choseFromHistory{
   font-family: "PingFangSC-Regular";
   font-size: 28rpx;
   width: 340rpx;
@@ -148,9 +203,89 @@
   margin-right: 10rpx;
   margin-left: -34rpx;
 }
+.hasProject .punchCard .left{
+  float: left;  
+}
+.hasProject .punchCard .subTitle{
+  font-family: "PingFangSC-Regular";
+  font-size: 24rpx;
+  color: #aaa9ae;
+  margin-left: 40rpx;
+}
+.hasProject .punchCard .subTitle .number{
+  color: #4f8ef4;
+}
+.hasProject .punchCard .right{
+  float: right;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+}
+.hasProject .punchCard .right button{
+  color: #3eb85f;
+  border: 1rpx solid #3eb85f;
+  font-size: 32rpx;
+  background-color: white;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.hasProject .punchCard .stage{
+  position: relative;
+  border-top: 20rpx solid #f1f2f6;
+  /*padding-left: 30rpx;*/
+}
+.hasProject .punchCard .stage .stageHead{
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #f1f2f6;
+  margin-left: 30rpx;
+  font-family: "PingFangSC-Medium";
+  font-size: 32rpx;
+  color: #0f161e;
+}
+.hasProject .punchCard .stage .stageImg{
+  width: 200rpx;
+  height: 150rpx;
+  border: 1rpx solid red;
+  float: left;
+  margin-left: 30rpx;
+}
+.hasProject .punchCard .stage .operation {
+  float: left;
+}
+.hasProject .punchCard .stage .operation image{
+  width: 42rpx;
+  height: 42rpx;
+  margin-left: 170rpx;
+}
+.hasProject .punchCard .stage .stageContent{
+  float: left;
+}
+.hasProject .punchCard .stage .stageContent-name text{
+  font-size: 32rpx;
+}
+.hasProject .punchCard .stage .stageContent-content text{
+  font-size: 28rpx;
+  color: #aaa9ae;
+}
+.hasProject .punchCard .stage .stageContent-name text,.hasProject .punchCard .stage .stageContent-content text{
+  margin-left: 30rpx;
+}
+.hasProject .punchCard .stage .choise{
+  color: #4286f5;
+  border: 1rpx solid #4286f5;
+  background-color: white;
+  width: 78rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 20rpx;
+  padding: 0;
+  margin-left: 30rpx;
+  margin-top: 16rpx;
+}
 .indexMain {
   display: flex;
   justify-content:center;
+  background-color: white;
   /*min-height:100%;*/
 }
 .indexMain .noProjectPic{
