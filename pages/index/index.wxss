@@ -250,6 +250,13 @@ page{
   float: left;
   margin-left: 30rpx;
 }
+.hasProject .punchCard .stage .changeLocation{
+  width: 42rpx;
+  height: 42rpx;
+  float: left;
+  margin-left: 50rpx;
+  margin-right: 10rpx;
+}
 .hasProject .punchCard .stage .operation {
   float: left;
 }
@@ -257,6 +264,9 @@ page{
   width: 42rpx;
   height: 42rpx;
   margin-left: 170rpx;
+}
+.hasProject .punchCard .stage .operation .edit{
+  margin-left: 70rpx;
 }
 .hasProject .punchCard .stage .stageContent{
   float: left;
@@ -282,6 +292,41 @@ page{
   padding: 0;
   margin-left: 30rpx;
   margin-top: 16rpx;
+}
+.hasProject .punchCard .punchCardNumber{
+  border-top: 20rpx solid #f1f2f6;
+}
+.hasProject .punchCard .punchCardNumber text{
+  color: #0f161e;
+  font-size: 32rpx;
+  font-family: "PingFangSC";
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  display: block;
+}
+.hasProject .punchCard .punchCardNumber .slider{
+  margin-top: 30rpx;
+  width:600rpx;
+  margin-right: 30rpx;
+  float: left;
+}
+.hasProject .punchCard .punchCardNumber .sliderContent{
+  float: left;
+  margin-top: 20rpx;
+  font-family: "PingFangSC";
+  font-size: 32rpx;
+  color: #4286f5;
+  margin-left: 0;
+}
+.hasProject .punchCard .punchCardNumber .editFinish{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  background-color: #3bb35b;
+  height: 92rpx;
+  line-height: 92rpx;
+  color: white;
+  margin-top: 52rpx;
+  margin-bottom: 40rpx;
 }
 .indexMain {
   display: flex;

@@ -198,7 +198,9 @@ const conf = {
     fixation:[0,1,2],
     bindPunchCard:false,
     bindPunchCardList:[],
-    mustChoise: true
+    mustChoise: true,
+    editbindPunchCard:false,
+    sliderNumber:'5'
   },
   onLoad(){
     this.initSwiper()
@@ -266,6 +268,17 @@ const conf = {
       url: 'historyPunchCard/historyPunchCard'
     })
   },
+  sliderChange: function(e){
+    console.log(e)
+    this.setData({
+      sliderNumber:e.detail.value
+    })
+  },
+  editFinshFunc: function(e){
+    this.setData({
+      editbindPunchCard:false
+    })
+  },
   //进度条的状态
   setPeocessIcon: function () {
     var index = 0//记录状态为1的最后的位置
@@ -297,6 +310,12 @@ const conf = {
   bindPunchCard: function () {
     this.setData({
       bindPunchCard:true
+    })
+  },
+  editPunchCard: function () {
+    console.log('here')
+    this.setData({
+      editbindPunchCard:true
     })
   },
   onShow(){

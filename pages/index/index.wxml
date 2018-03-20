@@ -84,7 +84,7 @@
               <text>学生需加入<text class="number">1</text>个,已加入</text><text class="number">1</text>个
             </view>
             <view class="right">
-              <button>编辑</button>
+              <button bindtap="editPunchCard">编辑</button>
             </view>
           </view>
           <view class="stage">
@@ -92,6 +92,7 @@
               <text>阶段一</text>
             </view>
             <view style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
+              <image wx:if="{{editbindPunchCard}}" class="changeLocation" src="../../images/changeLocation.png"/>
               <image class="stageImg" src=""/>
               <view class="stageContent">
                 <view class="stageContent-name">
@@ -105,67 +106,21 @@
                 </view>
               </view>
               <view class="operation">
-                <image src="../../images/delete.png"/>
-              </view>
-            </view>
-            <view style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
-              <image class="stageImg" src=""/>
-              <view class="stageContent">
-                <view class="stageContent-name">
-                  <text>我是活动打卡名</text>
-                </view>
-                <view class="stageContent-content">
-                  <text>我是介绍</text>
-                </view>
-                <view>
-                  <button style="border:1rpx solid {{mustChoise ? '#4286f5;' : '#3eb85f;'}} color:{{mustChoise ? '#4286f5;' : '#3eb85f;'}}" class="choise">必选</button>
-                </view>
-              </view>
-              <view class="operation">
-                <image src="../../images/delete.png"/>
+                <image wx:if="{{!editbindPunchCard}}" src="../../images/delete.png"/>
+                <image class="edit" wx:else src="../../images/edit.png"/>
               </view>
             </view>
           </view>
-          <view class="stage">
-            <view class="stageHead">
-              <text>阶段二</text>
+          <view wx:if="{{editbindPunchCard}}" class="punchCardNumber">
+            <view style="overflow: hidden;">
+              <text>需参加打卡数量</text>
+              <!-- show-value -->
+              <slider class="slider" value="{{sliderNumber}}" bindchange="sliderChange" min="1" max="8"/>
+              <text class="sliderContent">{{sliderNumber}}个</text>
             </view>
-            <view style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
-              <image class="stageImg" src=""/>
-              <view class="stageContent">
-                <view class="stageContent-name">
-                  <text>我是活动打卡名</text>
-                </view>
-                <view class="stageContent-content">
-                  <text>我是介绍</text>
-                </view>
-                <view>
-                  <button class="choise">必选</button>
-                </view>
-              </view>
-              <view class="operation">
-                <image src="../../images/delete.png"/>
-              </view>
-            </view>
-            <view style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
-              <image class="stageImg" src=""/>
-              <view class="stageContent">
-                <view class="stageContent-name">
-                  <text>我是活动打卡名</text>
-                </view>
-                <view class="stageContent-content">
-                  <text>我是介绍</text>
-                </view>
-                <view>
-                  <button class="choise">必选</button>
-                </view>
-              </view>
-              <view class="operation">
-                <image src="../../images/delete.png"/>
-              </view>
-            </view>
+            <button bindtap="editFinshFunc" class="editFinish" type="primary">编辑完成</button>
           </view>
-          <view class="content">
+          <view wx:if="{{!editbindPunchCard}}" class="content">
             <view class="child">
               <button class="addNew" bindtap="addNew">创建新的打卡项目</button>
               <button bindtap="historyPunchCardFunc" class="choseFromHistory">
