@@ -1,4 +1,4 @@
-<view>
+<form>
 	<!-- 课前部分 -->
 	<view class="first all">
 		<view class="header">
@@ -6,54 +6,64 @@
 			<text class="title">课前部分</text>
 		</view>
 		<view class="content">
-			<text class="stage">节点1</text>
-			<!-- main -->
-			<view class="main">
-				<view class="wrapper">
-					<text class="label">节点名称:</text>
-					<input placeholder="请输入节点名称" />
-				</view>
-				<!-- 开始时间 -->
-				<view class="wrapper">
-					<picker class="picker" mode="date" value="" bindchange="endTimedataChange">
-				    <view style="overflow: hidden">
-				    	<text class="label">开始时间:</text>
-				      <text class="text" wx:if=""></text>
-				    	<text class="text" wx:else>请输入开始时间</text>
-				    	<view class="navigator">
-						    <view class="navigator-arrow"></view>
-						  </view>
-				    </view>
-			  	</picker>
-				</view>
-				<!-- 结束时间 -->
-				<view class="wrapper">
-					<picker class="picker" mode="date" value="" bindchange="endTimedataChange">
-				    <view style="overflow: hidden">
-				    	<text class="label">结束时间:</text>
-				      <text class="text" wx:if=""></text>
-				    	<text class="text" wx:else>请输入结束时间</text>
-				    	<view class="navigator">
-						    <view class="navigator-arrow"></view>
-						  </view>
-				    </view>
-			  	</picker>
-				</view>
-				<!-- 是否为打卡 -->
-				<view class="wrapper">
-					<text class="label">是否为打卡:</text>
-					<label class="radio">
-		        <radio name="radio" value="r1" checked="true"/>否
-		      </label>
-		      <label style="margin-left:50rpx;" class="radio">
-		        <radio name="radio" value="r2" />是
-		      </label>
-				</view>
+			<view wx:for="{{submitAllData.stage[0].node}}">
+			  <view wx:if="{{item.part == '课前'}}"> 
+			  		<text class="stage">节点{{item.orderNum}}</text>
+						<!-- main -->
+						<view class="main">
+							<view class="wrapper">
+								<text class="label">节点名称:</text>
+								<input data-index="{{index}}" data-stage="{{0}}" bindinput="bindKeyInput" placeholder="请输入节点名称" value="{{item.name}}"/>
+							</view>
+							<!-- 开始时间 -->
+							<view class="wrapper">
+								<picker  data-index="{{index}}" data-stage="{{0}}"  class="picker" mode="date" value="{{item.beginTime}}" bindchange="startTimedataChange">
+							    <view style="overflow: hidden">
+							    	<text class="label">开始时间:</text>
+							      <text class="text" wx:if="{{item.beginTime}}">{{item.beginTime}}</text>
+							    	<text class="text" wx:else>请输入开始时间</text>
+							    	<view class="navigator">
+									    <view class="navigator-arrow"></view>
+									  </view>
+							    </view>
+						  	</picker>
+							</view>
+							<!-- 结束时间 -->
+							<view class="wrapper">
+								<picker class="picker" mode="date" value="{{endTime}}" bindchange="endTimedataChange">
+							    <view style="overflow: hidden">
+							    	<text class="label">结束时间:</text>
+							      <text class="text" wx:if="{{item.endTime}}">{{item.endTime}}</text>
+							    	<text class="text" wx:else>请输入结束时间</text>
+							    	<view class="navigator">
+									    <view class="navigator-arrow"></view>
+									  </view>
+							    </view>
+						  	</picker>
+							</view>
+							<!-- 是否为打卡 -->
+							<view class="wrapper">
+								<text class="label">是否为打卡:</text>
+								<label class="radio">
+					        <radio name="radio" value="r1" checked="true"/>否
+					      </label>
+					      <label style="margin-left:50rpx;" class="radio">
+					        <radio name="radio" value="r2" />是
+					      </label>
+							</view>
+						</view>
+			  </view>
+			  
 			</view>
+			
+			
+			
+			
+			
 			<!-- main -->
 			<!-- 增加节点 -->
 			<view>
-				<button type="primary" class="addStage">增加节点</button>
+				<button type="primary" class="addStage" bindtap="addNode">增加节点</button>
 			</view>
 			<!-- 增加节点 end -->
 		</view>
@@ -182,4 +192,4 @@
 	<!-- 发布  -->
 	<button type="primary" bindtap="publishFunc" class="publish">发布</button>
 	<!-- 发布 edn -->
-</view>
+</form>

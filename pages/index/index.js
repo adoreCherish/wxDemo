@@ -105,6 +105,7 @@ swiper.prototype.ontouchEnd = function(e, callback){
         // lastTotalTranlateX 递增
         // this.singleOffsetX 为负数 -- 得 +
         this.swiperIndex -= 1
+        console.log('当前的index:' + this.swiperIndex)
         lastTotalTranlateX = this.boxTranslateX - this.singleOffsetX
       } 
       else {
@@ -115,10 +116,11 @@ swiper.prototype.ontouchEnd = function(e, callback){
     }
     //  滑向下一张
     else {
-      console.log('//  滑向下一张')
+      console.log('//  滑向下一张:')
       if ( Math.abs(this.boxTranslateX) < Math.abs(this.maxTranX) ) {
         // lastTotalTranlateX 递增
         this.swiperIndex += 1
+        console.log('当前的index:' + this.swiperIndex)
         lastTotalTranlateX = this.boxTranslateX + this.singleOffsetX
       } else {
         console.log('到底图了')
@@ -172,35 +174,62 @@ const conf = {
     swiperAnimationData:{} ,
     // 跳转到的图片索引 swiperIndex
     swiperIndex: 0 ,
-    swiperImgUrls: [{
-      'text':'知识分享',
-      'time':'3.14',
-      'status': '0'
-      },{
-        'text':'时间管理',
-        'time':'3.15',
-        'status': '1'
-      },{
-        'text':'疯狂学习',
-        'time':'3.16',
-        'status': '1'
-    }],
-    processData: [{
-      name: '知识分享',
-      start: '#fff',
-      end: '#EFF3F6'
-    },
-    {
-      name: '时间管理',
-      start: '#EFF3F6',
-      end: '#fff'
-    }],
-    fixation:[0,1,2],
+    // swiperUrls: [{
+    //   'text':'知识分享',
+    //   'time':'3.14',
+    //   'status': '0'
+    //   },{
+    //     'text':'时间管理',
+    //     'time':'3.15',
+    //     'status': '1'
+    //   },{
+    //     'text':'疯狂学习',
+    //     'time':'3.16',
+    //     'status': '1'
+    // }],
+    // processData: [{
+    //   name: '知识分享',
+    //   start: '#fff',
+    //   end: '#EFF3F6'
+    // },
+    // {
+    //   name: '时间管理',
+    //   start: '#EFF3F6',
+    //   end: '#fff'
+    // }],
+    // fixation:[0,1,2],
     bindPunchCard:false,
     bindPunchCardList:[],
     mustChoise: true,
     editbindPunchCard:false,
-    sliderNumber:'5'
+    sliderNumber:'5',
+    dataLists:{
+      name:'员工领导力培训',
+      processTime:'11/12',
+      totalTime:'21',
+      stage:[{
+        stateName:'时间管理1',
+        stageTime:'3.14',
+        stageStage:'课前',
+        stageIndex:'1'
+      },{
+        stateName:'时间管理1',
+        stageTime:'3.14',
+        stageStage:'课前',
+        stageIndex:'1'
+      },{
+        stateName:'时间管理2',
+        stageTime:'3.14',
+        stageStage:'课中',
+        stageIndex:'2'
+      },{
+        stateName:'时间管理3',
+        stageTime:'3.14',
+        stageStage:'课后',
+        stageIndex:'3'
+      }]
+    },
+    dataListsStageIndex:''
   },
   onLoad(){
     this.initSwiper()
@@ -243,6 +272,9 @@ const conf = {
         }
       })
     } 
+    this.setData({
+      dataListsStageIndex:2
+    })
   },
   getUserInfo: function(e) {
     console.log('*******getUserInfo*******')
@@ -325,7 +357,7 @@ const conf = {
     // Swiper.computedScreenRatio(systemInfo)
 
     Swiper = new swiper({
-      imgLength: this.data.swiperImgUrls.length ,
+      imgLength: this.data.dataLists.stage.length ,
       success: function(width){
         that.setData({
           swiperContainWidth : width

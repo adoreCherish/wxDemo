@@ -1,11 +1,11 @@
 {
   "pages":[
+    "pages/index/addProject/addProject",
     "pages/index/index",
     "pages/index/addPunchCard/addPunchCard",
     "pages/user/user",
     "pages/user/setting/setting",
     "pages/index/historyPunchCard/historyPunchCard",
-    "pages/index/addProject/addProject",
     "pages/index/addProject/stage/stage",
     "pages/logs/logs"
   ],

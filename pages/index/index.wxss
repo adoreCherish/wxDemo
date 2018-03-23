@@ -40,7 +40,51 @@ page{
   display: block;
 }
 .progress{
-  /*float: right*/
+  margin-left: 30rpx;
+  overflow: hidden;
+  border-bottom: 1rpx solid #E5E5E5;
+  /*padding-bottom: 25rpx;*/
+  margin-right: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.progress text{
+  float: left;
+  font-family: "PingFangSC-Regular";
+  color: #0f161e;
+  font-size: 28rpx;
+}
+.progress .stageName{
+  color: #0f161e;
+  float: left;
+  margin-left: 20rpx;
+}
+.progress .stageTime{
+  color: #aaa9ae;
+  float: right;
+}
+.progress image{
+  width: 34rpx;
+  height: 37rpx;
+  border: 1rpx solid red;
+  float: left;
+  margin-top: 23rpx;
+}
+.progress button{
+  width: 70rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  float: left;
+  padding: 0;
+  font-size: 24rpx;
+  font-family: "PingFangSC-Regular";
+  color: #00c63e;
+  border: 1rpx solid #00c6ae;
+  margin-left: 20rpx;
+  margin-top: 23rpx;
+  background-color: white;
+}
+/*.progress{
   position: absolute;
   right: 30rpx;
   top: 20rpx;
@@ -55,9 +99,8 @@ page{
 }
 .progress .static{
   font-size: 24rpx;
-  /*margin-top: 16rpx;*/
   color: #aaa9ae;
-}
+}*/
 /*首页头部end*/
 
 /*首页内容start*/

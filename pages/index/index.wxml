@@ -11,11 +11,11 @@
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
     <view>
       <text class="userInfoNickName">{{userInfo.nickName}}管理员,你好</text>
-      <text wx:if="{{hasProject}}" class="userDescription">欢迎来到<text style="color: #008bd6">员工领导力培训</text></text>
+      <text wx:if="{{hasProject}}" class="userDescription">欢迎来到<text style="color: #008bd6">{{dataLists.name}}</text></text>
       <text wx:else class="userDescription">欢迎来到本项目的学习地图</text>
     </view>
     <view class="progress" wx:if="{{hasProject}}">
-      <text class="content">1/12</text>
+      <text class="content">{{dataLists.processTime}}</text>
       <text class="static">进度</text>
     </view>
   </view>
@@ -27,10 +27,11 @@
       <view class="hasProject">
         <view class="projectStatus">
           <view class="header">
-            <text class="left">阶段一</text>
-            <text class="date">(21天)</text>
+            <text class="left">阶段{{dataListsStageIndex}}</text>
+            <text class="date">({{dataLists.totalTime}}天)</text>
             <button class="right">编辑项目</button>
           </view>
+          <!-- 可播放列表展示 -->
           <view>
             <view class='swiper-container'>
               
@@ -41,27 +42,26 @@
               bindtouchend='swiperTouchEnd' 
               class='card-swiper-box' 
               >
-
-
-              <block wx:for='{{swiperImgUrls}}' wx:key="{{index}}">
-                  <!-- <image src='{{item}}' class='card-item' ></image>  -->
-                  <view class="card-item {{swiperImgUrls[index].status == 0 ? 'card-item0' : 'card-item1'}}">
-                    <image class="timePic" src="../../images/time.png" />
-                    <view class="issue">
-                      <text>{{swiperImgUrls[index].text}}</text>
-                      <image class="location" src="../../images/location.png" />
+                <block wx:for='{{dataLists.stage}}' wx:key="{{index}}">
+                    <!-- <image src='{{item}}' class='card-item' ></image>  -->
+                    <view class="card-item {{dataLists.stage[index].status == 0 ? 'card-item0' : 'card-item1'}}">
+                      <image class="timePic" src="../../images/time.png" />
+                      <view class="issue">
+                        <text>{{dataLists.stage[index].stateName}}</text>
+                        <image class="location" src="../../images/location.png" />
+                      </view>
+                      <text class="time">{{dataLists.stage[index].stageTime}}</text>
+                      <button class="status">{{dataLists.stage[index].stageStage}}</button>
                     </view>
-                    <text class="time">{{swiperImgUrls[index].time}}</text>
-                    <button class="status">课时</button>
-                  </view>
-              </block>
+                </block>
               </view>
             </view>
           </view>
+          <!-- 可播放列表展示 -->
           <!-- 时间轴 -->
-          <view>
+          <!-- <view>
             <view class='order_process'>
-              <view class='process_wrap' wx:for="{{processData}}" wx:key="{{index}}">
+              <view class='process_wrap' wx:for="{{dataLists.stage}}" wx:key="{{index}}">
                 <view class='process'>
                   <block wx:for="{{fixation}}" wx:key="{{index}}">
                     <view class='process_line' style="background:{{item.start}}"></view>
@@ -72,11 +72,20 @@
                     </view>
                   </block>
                 </view>
-                <text class='process_name'>{{item.name}}</text>
+                <text wx:if="{{item.stageIndex == dataListsStageIndex}}" class='process_name'>{{item.stateName}}</text>
               </view>
+            </view>
+          </view> -->
+          <view wx:for="{{dataLists.stage}}" wx:key="{{index}}">
+            <view wx:if="{{item.stageIndex == dataListsStageIndex}}" class="progress">
+              <image src=""/>
+              <text class="stageName">{{item.stateName}}</text>
+              <button>{{item.stageStage}}</button>
+              <text class="stageTime">{{item.stageTime}}</text>
             </view>
           </view>
         </view>
+        <!-- 打卡管理部分 -->
         <view class="punchCard" wx:if="{{bindPunchCard || bindPunchCardList.length > 0}}">
           <view class="header">
             <text class="left">我管理的打卡</text>
