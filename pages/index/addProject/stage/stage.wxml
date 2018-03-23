@@ -12,14 +12,20 @@
 						<!-- main -->
 						<view class="main">
 							<view class="wrapper">
-								<text class="label">节点名称:</text>
+								<view class="label">
+									<image src=""/>
+									<text class="label">节点名称:</text>
+								</view>
 								<input data-index="{{index}}" data-stage="{{0}}" bindinput="bindKeyInput" placeholder="请输入节点名称" value="{{item.name}}"/>
 							</view>
 							<!-- 开始时间 -->
 							<view class="wrapper">
 								<picker  data-index="{{index}}" data-stage="{{0}}"  class="picker" mode="date" value="{{item.beginTime}}" bindchange="startTimedataChange">
 							    <view style="overflow: hidden">
-							    	<text class="label">开始时间:</text>
+							    	<view class="label">
+											<image src=""/>
+											<text class="label">开始时间:</text>
+										</view>
 							      <text class="text" wx:if="{{item.beginTime}}">{{item.beginTime}}</text>
 							    	<text class="text" wx:else>请输入开始时间</text>
 							    	<view class="navigator">
@@ -32,7 +38,10 @@
 							<view class="wrapper">
 								<picker class="picker" mode="date" value="{{endTime}}" bindchange="endTimedataChange">
 							    <view style="overflow: hidden">
-							    	<text class="label">结束时间:</text>
+							    	<view class="label">
+											<image src=""/>
+											<text class="label">结束时间:</text>
+										</view>
 							      <text class="text" wx:if="{{item.endTime}}">{{item.endTime}}</text>
 							    	<text class="text" wx:else>请输入结束时间</text>
 							    	<view class="navigator">
@@ -43,7 +52,7 @@
 							</view>
 							<!-- 是否为打卡 -->
 							<view class="wrapper">
-								<text class="label">是否为打卡:</text>
+								<text class="radioLabel">是否为打卡:</text>
 								<label class="radio">
 					        <radio name="radio" value="r1" checked="true"/>否
 					      </label>

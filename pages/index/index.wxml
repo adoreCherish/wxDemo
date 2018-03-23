@@ -11,7 +11,7 @@
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
     <view>
       <text class="userInfoNickName">{{userInfo.nickName}}管理员,你好</text>
-      <text wx:if="{{hasProject}}" class="userDescription">欢迎来到<text style="color: #008bd6">{{dataLists.name}}</text></text>
+      <text wx:if="{{hasProject}}" class="userDescription">欢迎来到{{dataLists.name}}</text>
       <text wx:else class="userDescription">欢迎来到本项目的学习地图</text>
     </view>
     <view class="progress" wx:if="{{hasProject}}">
@@ -59,25 +59,8 @@
           </view>
           <!-- 可播放列表展示 -->
           <!-- 时间轴 -->
-          <!-- <view>
-            <view class='order_process'>
-              <view class='process_wrap' wx:for="{{dataLists.stage}}" wx:key="{{index}}">
-                <view class='process'>
-                  <block wx:for="{{fixation}}" wx:key="{{index}}">
-                    <view class='process_line' style="background:{{item.start}}"></view>
-                    <image bindtap="bindPunchCard" class='process_icon' src="../../images/timerShaft.png"></image>
-                    <image wx:if="{{bindPunchCard}}" class="location" src="../../images/location.png" />
-                    <view class='process_line' style="background:{{item.end}}">
-                      <view wx:if="{{fixation[index] == '2'}}" class="transform">-----</view>
-                    </view>
-                  </block>
-                </view>
-                <text wx:if="{{item.stageIndex == dataListsStageIndex}}" class='process_name'>{{item.stateName}}</text>
-              </view>
-            </view>
-          </view> -->
           <view wx:for="{{dataLists.stage}}" wx:key="{{index}}">
-            <view wx:if="{{item.stageIndex == dataListsStageIndex}}" class="progress">
+            <view bindtap="bindPunchCard" wx:if="{{item.stageIndex == dataListsStageIndex}}" class="projectProgress">
               <image src=""/>
               <text class="stageName">{{item.stateName}}</text>
               <button>{{item.stageStage}}</button>

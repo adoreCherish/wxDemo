@@ -3,7 +3,12 @@ wx:key="{{index}}"
 wx:for-items="{{lists}}" 
 class="wrapper"
 >
-	<text class="label">{{lists[index].inputTitle}}</text>
+  <view class="left">
+    <image class="image" src=""/>
+    <view style="height: 0;margin-top:-30rpx;">
+      <text class="label">{{lists[index].inputTitle}}</text>
+    </view>
+  </view>
 	<input
   data-id="{{lists[index].name}}"
   bindblur="bindKeyInput" 

@@ -1,4 +1,34 @@
+.punchCard .leftLabel{
+  float: left;
+  width: 172rpx;
+  border-right: 1rpx solid #DFE0E4;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+}
+.punchCard .leftLabel image{
+  width:35rpx;
+  height:44rpx;
+  border: 1rpx solid red; 
+}
+.punchCard .rightContent{
+  float: left;
+  flex:1;
+}
 .punchCard .title{
+  font-family: "PingFangSC-Medium";
+  color: #0f161e;
+  font-size:24rpx;
+  /*padding-top: 40rpx;*/
+  /*padding-bottom:20rpx;*/
+  display: block;
+  /*background-color: #f1f2f6;*/
+  /*padding-left:30rpx;*/
+  margin-top: 17rpx;
+  float: left;
+}
+/*.punchCard .title{
 	font-family: "PingFangSC-Medium";
 	color: #0f161e;
 	font-size:28rpx;
@@ -7,7 +37,7 @@
 	display: block;
 	background-color: #f1f2f6;
   padding-left:30rpx;
-}
+}*/
 .lists view:last-child{
 	border-bottom: 0;
 }
@@ -64,8 +94,9 @@
 	height:110rpx;
 	line-height: 110rpx;
 	border-bottom:1rpx solid #DFE0E4;
-	margin-left:30rpx;
-	margin-right:30rpx;
+  padding-left: 14rpx;
+	/*margin-left:30rpx;*/
+	/*margin-right:30rpx;*/
 }
 .punchCard .picker:last-child{
   border-bottom:0;
@@ -82,12 +113,47 @@
   align-items: center;
   float: right;
   margin-top:35rpx;
+  margin-right:30rpx;
 }
 .punchCard .specailPicker {
 	border-top: 20rpx solid #f1f2f6;
 }
+.punchCard .specailPicker .picker{
+  padding-left: 0
+}
 .punchCard .specailPicker .picker .navigator{
 	margin-top: -20rpx;
+}
+.punchCard .specailPicker .left{
+  float: left;
+  width: 172rpx;
+  border-right: 1rpx solid #DFE0E4;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  /*justify-content: center;*/
+}
+.punchCard .specailPicker .left image{
+  width:35rpx;
+  height:44rpx;
+  border: 1rpx solid red; 
+  margin-top: 15rpx;
+}
+.punchCard  .specailPicker .left .leftTitle{
+  font-family: "PingFangSC-Medium";
+  color: #0f161e;
+  font-size:24rpx;
+  /*padding-top: 40rpx;*/
+  /*padding-bottom:20rpx;*/
+  /*display: block;*/
+  /*background-color: #f1f2f6;*/
+  /*padding-left:30rpx;*/
+  /*margin-top: 17rpx;*/
+  /*float: left;*/
+}
+.punchCard .rightContent{
+  float: left;
+  flex:1;
 }
 .punchCard .picker .navigator:before {
   content: " ";
@@ -134,15 +200,15 @@
   right:4rpx;
 }
 .punchCard .punchCardContent .content{
-	padding-left: 30rpx;
-	padding-right: 30rpx;
-	padding-top: 30rpx;
+	/*padding-left: 30rpx;*/
+	/*padding-right: 30rpx;*/
+	/*padding-top: 30rpx;*/
 }
 .punchCard .punchCardContent textarea{
-	border: 1rpx solid #e5e5e5;
+	/*border: 1rpx solid #e5e5e5;*/
 	/*margin-left: 30rpx;*/
 	/*margin-right: 30rpx;*/
-	border-radius: 5rpx;
+	/*border-radius: 5rpx;*/
 	width: 100%;
 	height: 180rpx;
 	padding-left: 20rpx;
@@ -153,15 +219,17 @@
 	box-sizing: border-box;
 }
 .punchCard .punchCardContent .function{
-	margin-top: 30rpx;
+	/*margin-top: 30rpx;*/
 	display:flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+  border-top: 20rpx solid #f1f2f6;
+  height: 140rpx;
 }
 .punchCard .punchCardContent .function  view{
 	text-align: center;
-	margin-bottom: 35rpx;
+	/*margin-bottom: 35rpx;*/
   width: 33%;
 }
 .punchCard .punchCardContent .function image{
@@ -195,10 +263,13 @@
 .punchCard .footer button{
 	height: 92rpx;
 	line-height: 92rpx;
-	background-color: #3bb35b;
+	background-color: #00c6ae;
 	color: white;
 	margin-left: 30rpx;
 	margin-right: 30rpx;
 	border-radius: 5rpx;
 	font-family: "PingFangSC-Regular";
+}
+.punchCard .footer button::after{
+  border: 1rpx solid #00c6ae;
 }

@@ -15,7 +15,8 @@ page{
   justify-content: flex-start;
   border-bottom: 20rpx solid #f1f2f6;
   position: relative;
-  background-color: white;
+  background-color: #4b69a8;
+  height: 130rpx;
 }
 
 .userinfo-avatar {
@@ -29,17 +30,17 @@ page{
 .userInfoNickName {
   margin-top: 20rpx;
   font-size: 32rpx;
-  color: #0f161e;
+  color: white;
   display: block;
   font-family: "PingFangSC-Medium"
 }
 .userDescription{
-  color:#aaa9ae;
+  color:white;
   font-size: 24rpx;
   font-family: "PingFangSC-Regular";
   display: block;
 }
-.progress{
+.projectProgress{
   margin-left: 30rpx;
   overflow: hidden;
   border-bottom: 1rpx solid #E5E5E5;
@@ -48,29 +49,29 @@ page{
   height: 80rpx;
   line-height: 80rpx;
 }
-.progress text{
+.projectProgress text{
   float: left;
   font-family: "PingFangSC-Regular";
-  color: #0f161e;
+  color: white;
   font-size: 28rpx;
 }
-.progress .stageName{
+.projectProgress .stageName{
   color: #0f161e;
   float: left;
   margin-left: 20rpx;
 }
-.progress .stageTime{
+.projectProgress .stageTime{
   color: #aaa9ae;
   float: right;
 }
-.progress image{
+.projectProgress image{
   width: 34rpx;
   height: 37rpx;
   border: 1rpx solid red;
   float: left;
   margin-top: 23rpx;
 }
-.progress button{
+.projectProgress button{
   width: 70rpx;
   height: 36rpx;
   line-height: 36rpx;
@@ -84,7 +85,7 @@ page{
   margin-top: 23rpx;
   background-color: white;
 }
-/*.progress{
+.progress{
   position: absolute;
   right: 30rpx;
   top: 20rpx;
@@ -96,11 +97,12 @@ page{
 }
 .progress .content{
   font-size: 28rpx;
+  color: white;
 }
 .progress .static{
   font-size: 24rpx;
-  color: #aaa9ae;
-}*/
+  color: white;
+}
 /*首页头部end*/
 
 /*首页内容start*/
@@ -108,8 +110,8 @@ page{
   background-color:white; 
 }
 .hasProject .projectStatus .header{
-  margin-left: 30rpx;
-  margin-right: 30rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
   border-bottom: 1rpx solid #aaa9ae;
   overflow: hidden;
   height: 100rpx;
@@ -133,17 +135,23 @@ page{
   float: right;
   font-size: 28rpx;
   font-family: "PingFangSC-Regular";
-  color: #3eb85f;
-  border-radius: 12rpx;
-  border: 1rpx solid #3eb85f;
-  background-color: white;
-  width:160rpx;
+  color: #4b69a8;
+  border-radius: 0;
+  border-color: transparent;
+  outline: 0;
+  background-color: transparent;
+  /*width:160rpx;*/
   height: 60rpx;
   line-height: 60rpx;
   padding: 0;
   position: absolute;
-  right: 0rpx;
+  right: 34rpx;
   top: 20rpx;
+  padding-left: 34rpx;
+}
+.hasProject .projectStatus .header .right::after{  
+  border:0;  
+  border-left: 1rpx solid #aaa9ae;
 }
 .order_process {
   display: flex;
@@ -232,13 +240,13 @@ page{
 }
 .hasProject .punchCard .addNew{
   /*margin-top: 114rpx;*/
-  color: #4286f5;
-  border: 1rpx solid #4286f5;
+  color: #4b69a8;
+  border: 1rpx solid #4b69a8;
   margin-bottom: 20rpx;
 }
 .hasProject .punchCard .choseFromHistory{
-  color: #3eb85f;
-  border: 1rpx solid #3eb85f;
+  color: #00c6ae;
+  border: 1rpx solid #00c6ae;
   line-height: 54rpx;
 }
 .hasProject .punchCard .choseFromHistory .addIcon{
@@ -399,7 +407,7 @@ page{
   width: 100rpx;
   height: 100rpx;
   /*border: 2px dashed #9a9ba3;*/
-  background-color: #008bd6;
+  background-color: #00c6ae;
   border-radius: 50%;
   bottom: 30rpx;
   right: 30rpx;

@@ -2,8 +2,8 @@
 	/*display: flex;
 	flex-direction: row;
 	align-items:center;*/
-	margin-left: 30rpx;
-	margin-right: 30rpx;
+	/*margin-left: 30rpx;*/
+	/*margin-right: 30rpx;*/
 	/*padding-top: 40rpx;*/
 	height: 110rpx;
 	font-size: 32rpx;
@@ -11,17 +11,34 @@
 	/*box-sizing: border-box;*/
 	line-height: 110rpx;
 }
+.wrapper .image{
+  width:35rpx;
+  height:44rpx;
+  border:1rpx solid red;
+  margin-top:17rpx;
+}
 .wrapper .label{
-	padding-right: 20rpx;
-	font-family: "PingFangSC-Medium";
-	color: #0f161e;
-	float: left;
+	font-family:"PingFangSC-Medium";
+  color:#0f161e;
+  font-size:24rpx;
+}
+.wrapper .left{
+  float:left;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  line-height:110rpx;
+  height:110rpx;
+  border-right:1rpx solid #DFE0E4;
+  /*margin-right:;*/
+  width:172rpx;
 }
 .wrapper input{
 	font-family: "PingFangSC-Regular";
 	color: #aaa9ae;
 	float: left;
 	margin-top:30rpx;
+  margin-left: 14rpx;
 }
 .navigator {
   padding: 20rpx 30rpx;

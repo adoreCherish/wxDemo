@@ -3,76 +3,125 @@
 	  <lists class="lists" lists="{{lists}}" bind:inputValue="getInputVal"></lists>
 	</view>
 	<view style="position: relative;">
-		<text class="title">打卡主图</text>
-		<view bindtap="chooseImage" class="picture">
-			<button class="icon-add"></button>
-			<text>请选择图片</text>
+		<view style="border-top: 20rpx solid #f1f2f6;overflow: hidden;display: flex">
+			<view class="leftLabel">
+				<image src=""/>
+				<text class="title">打卡主图</text>
+			</view>
+			<view class="rightContent">
+				<view bindtap="chooseImage" class="picture">
+					<button class="icon-add"></button>
+					<text>请选择图片</text>
+				</view>
+			</view>	
 		</view>
 	</view>
 	<view>
-		<text class="title">开始结束时间</text>
-		<picker class="picker" mode="date" value="startTime" bindchange="startTimedataChange">
-	    <view>
-	      <text class="text" wx:if="{{startTime}}">{{startTime}}</text>
-	    	<text class="text" wx:else>请选择开始时间</text>
-	    	<view class="navigator">
-			    <view class="navigator-arrow"></view>
+		<view style="border-top: 20rpx solid #f1f2f6;overflow: hidden;display: flex">
+			<view class="leftLabel">
+				<image src=""/>
+				<text class="title">项目时间</text>
 			</view>
-	    </view>
-		</picker>
-		<picker class="picker" mode="date" value="endTime" bindchange="startTimedataChange">
-	    <view>
-	      <text class="text" wx:if="{{endTime}}">{{endTime}}</text>
-	    	<text class="text" wx:else>请选择结束时间</text>
-	    	<view class="navigator">
-			    <view class="navigator-arrow"></view>
+			<view class="rightContent">
+				<picker class="picker" mode="date" value="startTime" bindchange="startTimedataChange">
+			    <view>
+			      <text class="text" wx:if="{{startTime}}">{{startTime}}</text>
+			    	<text class="text" wx:else>请选择开始时间</text>
+			    	<view class="navigator">
+					    <view class="navigator-arrow"></view>
+					</view>
+			    </view>
+				</picker>
+				<picker class="picker" mode="date" value="endTime" bindchange="startTimedataChange">
+			    <view>
+			      <text class="text" wx:if="{{endTime}}">{{endTime}}</text>
+			    	<text class="text" wx:else>请选择结束时间</text>
+			    	<view class="navigator">
+					    <view class="navigator-arrow"></view>
+					</view>
+			    </view>
+				</picker>
 			</view>
-	    </view>
-		</picker>
+		</view>	
 	</view>
 	<view class="specailPicker">
 		<picker class="picker" range="{{punchCardFrequency}}" value="{{punchCardFrequencyIndex}}" bindchange="bindpunchCardFrequency">
-	    <view style="overflow: hidden;">
-	    	<text class="label" >打卡频率:</text>
-	    	<view class="navigator">
-	    		<view class="navigator-text">{{punchCardFrequency[punchCardFrequencyIndex]}}</view>
-			    <view class="navigator-arrow"></view>
-			</view>
-	    </view>
+		    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
+				<view class="left">
+					<image src=""/>
+					<view style="height: 0;margin-top: -30rpx;">
+						<text class="leftTitle">打卡频率</text>
+					</view>
+				</view>
+				<view class="rightContent">
+			    	<view class="navigator">
+			    		<view class="navigator-text">{{punchCardFrequency[punchCardFrequencyIndex]}}</view>
+					    <view class="navigator-arrow"></view>
+					</view>
+				</view>
+		    </view>
 		</picker>
 		<picker class="picker" range="{{punchCardRequire}}" value="{{punchCardRequireIndex}}" bindchange="bindpunchCardRequire">
-	    <view style="overflow: hidden;">
-	    	<text class="label" >打卡要求:</text>
-	    	<view class="navigator">
-	    		<view class="navigator-text">{{punchCardRequire[punchCardRequireIndex]}}</view>
-			    <view class="navigator-arrow"></view>
-			</view>
+	    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
+				<view class="left">
+					<image src=""/>
+					<view style="height: 0;margin-top: -30rpx;">
+						<text class="leftTitle">打卡要求</text>
+					</view>
+				</view>
+				<view class="rightContent">
+			    	<view class="navigator">
+			    		<view class="navigator-text">{{punchCardRequire[punchCardRequireIndex]}}</view>
+					    <view class="navigator-arrow"></view>
+					</view>
+				</view>
 	    </view>
 		</picker>
 		<picker class="picker" range="{{punchCardMust}}" value="{{punchCardMustIndex}}" bindchange="bindpunchCardMust">
-	    <view style="overflow: hidden;">
-	    	<text class="label" >是否必选:</text>
-	    	<view class="navigator">
-	    		<view class="navigator-text">{{punchCardMust[punchCardMustIndex]}}</view>
-			    <view class="navigator-arrow"></view>
+	    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
+				<view class="left">
+					<image src=""/>
+					<view style="height: 0;margin-top: -30rpx;">
+						<text class="leftTitle">是否必选</text>
+					</view>
+				</view>
+				<view class="rightContent">
+		    	<view class="navigator">
+		    		<view class="navigator-text">{{punchCardMust[punchCardMustIndex]}}</view>
+				    <view class="navigator-arrow"></view>
+				</view>
 			</view>
 	    </view>
 		</picker>
 		<picker class="picker" range="{{punchCardChose}}" value="{{punchCardChoseIndex}}" bindchange="bindpunchCardChose">
-	    <view style="overflow: hidden;">
-	    	<text class="label" >所选阶段:</text>
-	    	<view class="navigator">
-	    		<view class="navigator-text">{{punchCardChose[punchCardChoseIndex]}}</view>
-			    <view class="navigator-arrow"></view>
-			</view>
+	    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
+				<view class="left">
+					<image src=""/>
+					<view style="height: 0;margin-top: -30rpx;">
+						<text class="leftTitle">所处阶段</text>
+					</view>
+				</view>
+				<view class="rightContent">
+			    	<view class="navigator">
+			    		<view class="navigator-text">{{punchCardChose[punchCardChoseIndex]}}</view>
+					    <view class="navigator-arrow"></view>
+					</view>
+				</view>
 	    </view>
 		</picker>
 	</view>
 	<view class="punchCardContent">
-		<text class="title">打卡内容</text>
-		<view class="content">
-			<!-- auto-focus="true" -->
-			<textarea placeholder="请输入打卡内容" placeholder-style="font-family:'PingFangSC-Regular';font-size:24rpx;color:#aaa9ae;"/>
+		<view style="border-top: 20rpx solid #f1f2f6;overflow: hidden;display: flex">
+			<view class="leftLabel">
+				<image src=""/>
+				<text class="title">打卡内容</text>
+			</view>
+			<view class="rightContent">
+				<view class="content">
+					<!-- auto-focus="true" -->
+					<textarea placeholder="请输入打卡内容" placeholder-style="font-family:'PingFangSC-Regular';font-size:24rpx;color:#aaa9ae;"/>
+				</view>
+			</view>
 		</view>
 		<view class="function">
 			<view>
