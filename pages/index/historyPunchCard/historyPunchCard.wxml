@@ -1,4 +1,25 @@
-<view class="history">
-  <!-- 搜索框 -->
-  历史打卡记录
+<view class="historyPunchCard">
+	<view class="search">
+		<icon size="12" type="search" class="iconSearch"/>
+		<input type="" name="" placeholder-style="margin-left:14rpx;" placeholder="请输入打卡名称" />
+	</view>
+	<view style="border-bottom: 20rpx solid #f1f2f6;"></view>
+	<view wx:for="{{historyList}}" wx:key="{{index}}" style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
+	  <image wx:if="{{editbindPunchCard}}" class="changeLocation" src="../../images/changeLocation.png"/>
+	  <image class="stageImg" src=""/>
+	  <view class="stageContent">
+	    <view class="stageContent-name">
+	      <text>{{item.stageContentName}}</text>
+	    </view>
+	    <view class="stageContent-content">
+	      <text>{{item.stageContentContent}}</text>
+	    </view>
+	    <view>
+	      <button style="border:1rpx solid {{item.stageMustChoose ? '#4b69a8;' : '#00c6ae;'}} color:{{item.stageMustChoose ? '#4b69a8;' : '#00c6ae;'}}" class="choise">必选</button>
+	    </view>
+	  </view>
+	  <view class="operation">
+	    <image data-index="{{index}}" bindtap="deleteFunc" src="../../../images/delete.png"/>
+	  </view>
+	</view>
 </view>

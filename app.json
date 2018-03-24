@@ -1,19 +1,20 @@
 {
   "pages":[
-    "pages/index/addPunchCard/addPunchCard",
-    "pages/index/index",
     "pages/index/addProject/addProject",
+    "pages/index/historyPunchCard/historyPunchCard",
+    "pages/user/sort/sort",
     "pages/user/user",
     "pages/user/setting/setting",
-    "pages/index/historyPunchCard/historyPunchCard",
+    "pages/index/addPunchCard/addPunchCard",
+    "pages/index/index",
     "pages/index/addProject/stage/stage",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#000",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "21Days",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle":"black"
   },
   "tabBar": {
     "color": "#999999",

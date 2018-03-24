@@ -1,0 +1,73 @@
+<view class="sort">
+  <view class="nav bc_white">
+    <view class="{{selectedChildren?'checked':'default'}}" bindtap="selectedChildren">学生排行榜</view>
+    <view class="{{selectedTeacher?'checked':'default'}}" bindtap="selectedTeacher">老师排行榜</view>
+  </view>
+  <view class="{{selectedChildren?'show':'hidden'}}">
+  	<block  wx:for="{{contentList}}" wx:key="{{index}}">
+	  	<view class="content">
+	  		<view class="left">
+		  		<image wx:if="{{index<=2}}" class="winning" src=""/>
+		  		<text wx:else>{{index+1}}</text>
+		  		<image class="portrait" src=""/>
+		  		<text class="cont">{{item.content}}</text>
+	  		</view>
+	  		<view class="right">
+	  			<image class="integral" src=""/>
+	  			<text class="integralNumber">{{item.integralNumber}}</text>
+	  			<image data-status="{{item.showOperation}}" data-operation="{{index}}" bindtap="showActionSheetFunc" class="kind-list-img" src=""/>
+	  		</view>
+	  		<view wx:if="{{item.showOperation}}" class="operation">
+	  			<view class="operationModel">
+	  				<image class="operationImg" src="" />
+	  				<text>老师</text>
+	  			</view>
+	  			<view class="operationModel">
+	  				<image class="operationImg" src="" />
+	  				<text>组长</text>
+	  			</view>
+	  			<view class="operationModel">
+	  				<image class="operationImg" src="" />
+	  				<text>删除</text>
+	  			</view>
+	  		</view>
+	  	</view>
+  	</block>
+  </view>
+  <view class="{{selectedTeacher?'show':'hidden'}}">
+  	<block wx:for="{{contentList}}" wx:key="{{index}}">
+	  	<view class="content">
+	  		<view class="left">
+		  		<image wx:if="{{index<=2}}" class="winning" src=""/>
+		  		<text wx:else>{{index+1}}</text>
+		  		<image class="portrait" src=""/>
+		  		<text class="cont">{{item.content}}</text>
+	  		</view>
+	  		<view class="right">
+	  			<image class="integral" src=""/>
+	  			<text class="integralNumber">{{item.integralNumber}}</text>
+	  			<image bindtap="showActionSheetFunc" class="kind-list-img" src=""/>
+	  		</view>
+	  		<view wx:if="{{showOperation}}" class="operation">
+	  			<view class="operationModel">
+	  				<image class="operationImg" src="" />
+	  				<text>老师</text>
+	  			</view>
+	  			<view class="operationModel">
+	  				<image class="operationImg" src="" />
+	  				<text>组长</text>
+	  			</view>
+	  			<view class="operationModel">
+	  				<image class="operationImg" src="" />
+	  				<text>删除</text>
+	  			</view>
+	  		</view>
+	  	</view>
+  	</block>
+  </view>
+  <view style="float:right;margin-top: 32rpx;">
+  	<text class="rule">查看积分规则></text>
+  </view>
+</view>
+
+

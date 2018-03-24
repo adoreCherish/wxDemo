@@ -1,0 +1,146 @@
+.sort .nav{
+	width:100%;
+	height:90rpx;
+	display:flex;
+	flex-direction:row;
+	font-family: "PingFangSC";
+	font-size: 32rpx;
+}
+.sort .default{
+	line-height:90rpx;
+	text-align:center;
+	flex:1;
+	/*border-right:1px solid gainsboro;*/
+	border-bottom: 1rpx solid white;
+	color:#aaa9ae;
+	/*font-weight:bold;*/
+	font-size:28rpx;
+	/*width: 180rpx;*/
+}
+.sort .checked{
+	line-height:90rpx;
+	text-align:center;
+	color:#00c6ae;
+	flex:1;
+	border-bottom: 1rpx solid #00c6ae;
+	/*border-right:1px solid gainsboro;*/
+	/*font-weight:bold;*/
+	font-size:28rpx;
+	/*width: 180rpx;*/
+}
+.sort .show{
+	display:block;
+	text-align:center;
+	/*line-height:200rpx;*/
+}
+.sort .hidden{
+	display:none;
+	text-align:center;
+	/*line-height:200rpx;*/
+}
+.sort .content{
+	height: 140rpx;
+	line-height: 140rpx;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+	border-bottom:1rpx solid #e5e5e5;
+	overflow: hidden;
+	position: relative;
+}
+.sort .content .left{
+	float: left;
+	display: flex;
+	align-items: center;
+}
+.sort .content .right{
+	float: right;
+	display: flex;
+	align-items: center;
+}
+.sort .content .left .winning{
+	width: 50rpx;
+	height: 72rpx;
+	border: 1rpx solid red;
+}
+.sort .content .left .portrait{
+	width: 82rpx;
+	height: 82rpx;
+	border: 1rpx solid red;
+	margin-left: 20rpx;
+	margin-right: 20rpx;
+}
+.sort .content .left .cont{
+	font-family: "PingFangSC";
+	font-size: 32rpx;
+	color: #0f161e;
+}
+.sort .content .right .integral{
+	width: 32rpx;
+	height: 32rpx;
+	margin-right: 10rpx;
+	border:1rpx solid red;
+}
+.sort .content .right .integralNumber{
+	color: #aaa9ae;
+	font-size: 28rpx;
+	font-family: "PingFangSC";
+	margin-right:30rpx;
+}	
+.sort .content .right .kind-list-img{
+	width: 40rpx;
+	height: 30rpx;
+	border:1rpx solid red;
+}
+.sort .content .operation{
+	overflow: hidden;
+	position: absolute;
+	right: 70rpx;
+	background-color: #4b69a8;
+	color: white;
+	font-family: "PingFangSC";
+	font-size: 22rpx;
+	height: 98rpx;
+	line-height: 98rpx;
+	margin-top: 21rpx;
+	border-radius: 5rpx;
+}
+.sort .content .operation .operationModel{
+	float: left;
+	display: flex;
+	flex-direction: column;
+	padding-left: 41rpx;
+	padding-right: 41rpx;
+	align-items: center;
+	border-right: 1rpx solid red;
+}
+.sort .content .operation .operationModel:last-child{
+	border-right: 0;
+}
+.sort .content .operation .operationImg{
+	width: 30rpx;
+	height: 44rpx;
+	border:1rpx solid red;
+	/*display: block;*/
+	margin-top: 12rpx;
+}
+.sort .content .operation .operationModel text{
+	margin-top: -30rpx;
+}
+.sort .rule{
+	font-family: "PingFangSC";
+	font-size: 32rpx;
+	color: #00c6ae;
+	margin-right: 30rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+

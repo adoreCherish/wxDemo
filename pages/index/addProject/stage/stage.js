@@ -33,18 +33,42 @@ Page({
     this.setData({'submitAllData.createBy':option.submitData.createBy})
     this.setData({'submitAllData.stage':[
       {
-          'name':'阶段一',
-          'ordernum':'1',
-          'node':[{
-            'name':this.data.nodeName,
-            'beginTime':this.data.beginTime,
-            'endTime':this.data.endTime,
-            'clockNeed':'1',
-            'orderNum':'1',
-            'part':'课前'
-          }]
-        }
-      ]
+        'name':'阶段一',
+        'ordernum':'1',
+        'node':[{
+          'name':this.data.nodeName,
+          'beginTime':this.data.beginTime,
+          'endTime':this.data.endTime,
+          'clockNeed':'1',
+          'orderNum':'1',
+          'part':'课前'
+        }]
+      },
+      {
+        'name':'阶段二',
+        'ordernum':'1',
+        'node':[{
+          'name':this.data.nodeName,
+          'beginTime':this.data.beginTime,
+          'endTime':this.data.endTime,
+          'clockNeed':'1',
+          'orderNum':'1',
+          'part':'课中'
+        }]
+      },
+      {
+        'name':'阶段三',
+        'ordernum':'1',
+        'node':[{
+          'name':this.data.nodeName,
+          'beginTime':this.data.beginTime,
+          'endTime':this.data.endTime,
+          'clockNeed':'1',
+          'orderNum':'1',
+          'part':'课后'
+        }]
+      }
+    ]
     })
   },
   startTimedataChange: function(e) {
@@ -54,12 +78,12 @@ Page({
     })
   },
   endTimedataChange: function(e) {
+    var key = 'submitAllData.stage['+ e.target.dataset.stage +'].node['+ e.target.dataset.index +'].endTime'
     this.setData({
-      endTime: e.detail.value
+      [key]: e.detail.value
     })
   },
   addNode:function(){
-    console.log(1)
     var nodes = this.data.submitAllData.stage[0].node;
     console.log(nodes)
     nodes.push({
@@ -74,29 +98,6 @@ Page({
   },
   publishFunc:function(e){
     console.log(e.submitData)
-    this.setData({'submitAllData.stage':[
-      {
-          'name':'阶段一',
-          'ordernum':'1',
-          'node':[{
-            'name':this.data.nodeName,
-            'beginTime':this.data.beginTime,
-            'endTime':this.data.endTime,
-            'clockNeed':'1',
-            'orderNum':'1',
-            'part':'课前'
-          },
-          {
-            'name':this.data.nodeName,
-            'beginTime':this.data.beginTime,
-            'endTime':this.data.endTime,
-            'clockNeed':'1',
-            'orderNum':'2',
-            'part':'课前'
-          }]
-        }
-      ]
-    })
     console.log(this.data.submitAllData)
   }
 })

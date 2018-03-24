@@ -1,48 +1,48 @@
 <view class="userCenter">
 	<view>
-		<view>
+		<view style="position: relative;">
 			<view class="header">
 				<view class="tx">
-					<image src=""/>
+					<image src="{{userInfoImg}}"/>
 				</view>
-				<view class="content">
+				<!-- <view class="content">
 					<text>牛仔裤褪色了</text>
-				</view>
-				<view class="position">
+				</view> -->
+				<!-- <view class="position">
 					<text>管理员</text>
-				</view>
+				</view> -->
 			</view>
-			<view class="background"></view>
-		</view>
-		<view class="slot">
-			<view class="one">
-				<view>
-					<image src="../../images/userSetting.png"/>
+			<!-- <view class="background"></view> -->
+			<view class="slot">
+				<view class="one">
+					<!-- <view> -->
+						<image src="../../images/userSetting.png"/>
+					<!-- </view> -->
+					<!-- <view class="oneText"> -->
+						<text style="float: left;margin-top:-10rpx;">个人积分</text>
+					<!-- </view>
+					<view class="ont"> -->
+						<text class="oneText">排行榜</text>
+					<!-- </view> -->
 				</view>
-				<view class="oneText">
-					<text>个人积分</text>
-				</view>
-				<view>
-					<text>排行榜</text>
-				</view>
-			</view>
-			<view class="sx"></view>
-			<view class="two">
-				<view>
-					<image src="../../images/usersSetting.png"/>
-				</view>
-				<view class="twoText">
-					<text>小组积分</text>
-				</view>
-				<view>
-					<text>排行榜</text>
+				<!-- <view class="sx"></view> -->
+				<view class="two">
+					<!-- <view> -->
+						<image src="../../images/usersSetting.png"/>
+					<!-- </view> -->
+					<!-- <view class="oneText"> -->
+						<text style="float: left;margin-top:-10rpx;">小组积分</text>
+					<!-- </view>
+					<view class="ont"> -->
+						<text class="twoText">排行榜</text>
+					<!-- </view> -->
 				</view>
 			</view>
 		</view>
 	</view>
 	<view>
 		<view class="container">
-			<view class="lists">
+			<view class="lists first">
 				<image src="../../images/userJL.png"/>
 				<text>我的发布记录</text>
 			</view>

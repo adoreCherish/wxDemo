@@ -1,0 +1,53 @@
+//index.js
+//获取应用实例
+const app = getApp()
+Page({
+    data:{
+      selectedChildren:true,
+      selectedTeacher:false,
+      // showOperation:false,
+      contentList:[]
+    },
+    selectedChildren:function(e){
+        this.setData({
+            selectedTeacher:false,
+            selectedChildren:true
+        })
+    },
+    selectedTeacher:function(e){
+        this.setData({
+            selectedChildren:false,
+            selectedTeacher:true
+        })
+    },
+    showActionSheetFunc(e){
+      console.log(e)
+      var key = 'contentList['+ e.target.dataset.operation +'].showOperation'
+      console.log(key)
+      this.setData({
+        [key]: !e.target.dataset.status
+      })
+      console.log(this.data.contentList)
+    },
+    onLoad(){
+      this.setData({
+        contentList:[{
+          'content':'乔布斯是偶像',
+          'integralNumber':60,
+          'showOperation':false
+        },{
+          'content':'我要权限',
+          'integralNumber':60,
+          'showOperation':false
+        },{
+          'content':'啦啦啦',
+          'integralNumber':60,
+          'showOperation':false
+        },{
+          'content':'aaa',
+          'integralNumber':10,
+          'showOperation':false
+        }]
+      })
+    }
+})

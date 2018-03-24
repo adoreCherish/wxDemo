@@ -28,7 +28,25 @@
 		</view>
 	</view>
 	<view wx:if="{{changeSetting}}" class="changeSetting">
-		<lists class="lists" lists="{{lists}}" bind:inputValue="getInputVal"></lists>
+		<!-- <lists class="lists" lists="{{lists}}" bind:inputValue="getInputVal"></lists> -->
+		<view class="editContent">
+			<!-- <view class="left"> -->
+				<image class="img" src=""/>
+				<view style="float: left;">
+					<text class="leftTitle">公司名称</text>
+				</view>
+			<!-- </view> -->
+			<input placeholder="请输入公司名称" />
+		</view>
+		<view class="editContent">
+			<!-- <view class="left"> -->
+				<image class="img" src=""/>
+				<view style="float: left;">
+					<text class="leftTitle">项目名称</text>
+				</view>
+			<!-- </view> -->
+			<input placeholder="请输入项目名称" />
+		</view>
 		<view class="operation">
 			<button class="delete">删除该公司</button>
 			<button class="finish" bindtap="finishFunc">编辑完成</button>

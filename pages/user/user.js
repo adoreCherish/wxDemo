@@ -3,6 +3,13 @@
 const app = getApp()
 Page({
   data: {
+  	userInfoImg: ''
+  },
+  onLoad:function(){
+  	console.log(app.globalData.userInfo.avatarUrl)
+  	this.setData({
+  		userInfoImg:app.globalData.userInfo.avatarUrl
+  	})
   },
   gotoSettings:function(){
     wx.navigateTo({

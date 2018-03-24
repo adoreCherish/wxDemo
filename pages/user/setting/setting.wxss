@@ -36,10 +36,13 @@
 	font-family: "PingFangSC";
 	font-size: 28rpx;
 	color: white;
-	background-color: #4286F5;
+	background-color: #00c6ae;
 	line-height: 50rpx;
 	padding: 0;
 	box-shadow: 0 10rpx 10rpx rgba(66,134,245,0.2);
+}
+.setting .lists .edit button::after{
+	border:1rpx solid #00c6ae;
 }
 .setting .code{
 	margin-top: 60rpx;
@@ -48,7 +51,7 @@
 	align-items: center;
 }
 .setting .code text{
-	color: #4286F5;
+	color: #4b69a8;
 	font-size: 28rpx;
 }
 .setting .code .navigator {
@@ -66,7 +69,7 @@
   height: 20rpx;
   width: 20rpx;
   border-width: 2rpx 2rpx 0 0;
-  border-color: #4286F5;
+  border-color: #4b69a8;
   border-style: solid;
   position: absolute;
   top: 50%;
@@ -90,6 +93,37 @@
 	margin-right: 30rpx;
 	box-shadow:0 0 20rpx 20rpx #F6F9FE;
 }
+.setting .changeSetting .editContent{
+	height: 110rpx;
+	/*line-height: 110rpx;*/
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	border-bottom:1rpx solid #e5e5e5;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+}
+.setting .changeSetting .editContent .img{
+	width: 36rpx;
+	height: 36rpx;
+	float: left;
+	/*margin-left: 30rpx;*/
+	/*margin-right: 15rpx;*/
+	margin-left: 0;
+}
+.setting .changeSetting .editContent .leftTitle{
+	font-family: "PingFangSC-Medium";
+  	color: #0f161e;
+  	font-size:24rpx;
+}
+.setting .changeSetting .editContent input{
+	font-family: "PingFangSC-Regular";
+	color: #aaa9ae;
+	float: left;
+	margin-top:12rpx;
+  	margin-left: 14rpx;
+  	font-size:24rpx;
+}
 .setting .changeSetting .operation{
 	margin-top: 50rpx;
 }
@@ -105,12 +139,12 @@
 	margin-bottom: 50rpx;
 }
 .setting .changeSetting .operation .delete{
-	color: #4286f5;
-	border: 1rpx solid #4286f5;
+	color: #4869a8;
+	border: 1rpx solid #4869a8;
 	width: 180rpx;
 }
 .setting .changeSetting .operation .finish{
-	color: #3eb85f;
-	border: 1rpx solid #3eb85f;
+	color: #00c6ae;
+	border: 1rpx solid #00c6ae;
 	width: 160rpx;
 }
