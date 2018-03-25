@@ -4,7 +4,7 @@ const app = getApp()
 Page({
   data: {
   	checked:true,
-  	changeSetting:true,
+  	changeSetting:false,
   	lists: [{
       "name" : "CN",
     	"inputTitle" : '公司名称:',

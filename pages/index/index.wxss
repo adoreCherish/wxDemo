@@ -64,12 +64,19 @@ page{
   color: #aaa9ae;
   float: right;
 }
-.projectProgress image{
+.projectProgress .img{
   width: 34rpx;
   height: 37rpx;
   border: 1rpx solid red;
   float: left;
   margin-top: 23rpx;
+}
+.projectProgress .location{
+  width: 23rpx;
+  height: 32rpx;
+  margin-left:30rpx;
+  margin-top:-30rpx;
+  /*border:1rpx solid red;*/
 }
 .projectProgress button{
   width: 70rpx;

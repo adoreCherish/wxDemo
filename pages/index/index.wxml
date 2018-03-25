@@ -23,13 +23,13 @@
   
   <!-- 内容 start -->
   <view>
-    <view wx:if="{{hasProject}}">
+    <view wx:if="{{dataLists.stage.length!=0}}">
       <view class="hasProject">
         <view class="projectStatus">
           <view class="header">
             <text class="left">阶段{{dataListsStageIndex}}</text>
             <text class="date">({{dataLists.totalTime}}天)</text>
-            <button class="right">编辑项目</button>
+            <button class="right" bindtap="editProject">编辑项目</button>
           </view>
           <!-- 可播放列表展示 -->
           <view>
@@ -48,7 +48,7 @@
                       <image class="timePic" src="../../images/time.png" />
                       <view class="issue">
                         <text>{{dataLists.stage[index].stateName}}</text>
-                        <image class="location" src="../../images/location.png" />
+                        <image wx:if="{{item.location}}" class="location" src="../../images/location.png" />
                       </view>
                       <text class="time">{{dataLists.stage[index].stageTime}}</text>
                       <button class="status">{{dataLists.stage[index].stageStage}}</button>
@@ -60,10 +60,11 @@
           <!-- 可播放列表展示 -->
           <!-- 时间轴 -->
           <view wx:for="{{dataLists.stage}}" wx:key="{{index}}">
-            <view bindtap="bindPunchCard" wx:if="{{item.stageIndex == dataListsStageIndex}}" class="projectProgress">
-              <image src=""/>
+            <view data-index="{{index}}" data-location="{{item.location}}" bindtap="bindPunchCard" wx:if="{{item.stageIndex == dataListsStageIndex}}" class="projectProgress">
+              <image class="img" src=""/>
               <text class="stageName">{{item.stateName}}</text>
               <button>{{item.stageStage}}</button>
+              <image class="location" wx:if="{{item.location}}" src="../../images/location.png"/>
               <text class="stageTime">{{item.stageTime}}</text>
             </view>
           </view>
@@ -73,7 +74,7 @@
           <view class="header">
             <text class="left">我管理的打卡</text>
             <view class="left subTitle">
-              <text>学生需加入<text class="number">1</text>个,已加入</text><text class="number">1</text>个
+              <text>学生需加入<text class="number">{{punchCardList.needChoose}}</text>个,已加入</text><text class="number">{{punchCardList.hadChoose}}</text>个
             </view>
             <view class="right">
               <button bindtap="editPunchCard">编辑</button>
@@ -83,15 +84,15 @@
             <view class="stageHead">
               <text>阶段一</text>
             </view>
-            <view style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
+            <view wx:for="{{punchCardList.stage}}" wx:key="{{index}}" style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
               <image wx:if="{{editbindPunchCard}}" class="changeLocation" src="../../images/changeLocation.png"/>
               <image class="stageImg" src=""/>
               <view class="stageContent">
                 <view class="stageContent-name">
-                  <text>我是活动打卡名</text>
+                  <text>{{item.stageContentName}}</text>
                 </view>
                 <view class="stageContent-content">
-                  <text>我是介绍</text>
+                  <text>{{item.stageContentContent}}</text>
                 </view>
                 <view>
                   <button style="border:1rpx solid {{mustChoise ? '#4286f5;' : '#3eb85f;'}} color:{{mustChoise ? '#4286f5;' : '#3eb85f;'}}" class="choise">必选</button>
@@ -107,7 +108,7 @@
             <view style="overflow: hidden;">
               <text>需参加打卡数量</text>
               <!-- show-value -->
-              <slider class="slider" value="{{sliderNumber}}" bindchange="sliderChange" min="1" max="8"/>
+              <slider class="slider" value="{{sliderNumber}}" bindchange="sliderChange" min="1" max="{{punchCardList.length}}"/>
               <text class="sliderContent">{{sliderNumber}}个</text>
             </view>
             <button bindtap="editFinshFunc" class="editFinish" type="primary">编辑完成</button>

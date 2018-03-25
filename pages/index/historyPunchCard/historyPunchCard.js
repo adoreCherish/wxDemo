@@ -15,7 +15,11 @@ Page({
   			'stageContentName':'我是活动打卡名2',
   			'stageContentContent':'我是介绍2',
   			'stageMustChoose':true
-  		}]
+  		},{
+        'stageContentName':'我是历史',
+        'stageContentContent':'我是介绍1',
+        'stageMustChoose':false
+      }]
   	})
   },
   deleteFunc:function(e){

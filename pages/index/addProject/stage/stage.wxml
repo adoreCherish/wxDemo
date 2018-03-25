@@ -8,7 +8,7 @@
 		<view class="content">
 			<view wx:for="{{submitAllData.stage[0].node}}" wx:key="{{index}}">
 			  <view wx:if="{{item.part == '课前'}}"> 
-			  		<text class="stage">节点{{item.orderNum}}</text>
+			  		<text class="stage">节点{{index+1}}</text>
 						<!-- main -->
 						<view class="main">
 							<view class="wrapper">
@@ -53,12 +53,12 @@
 							<!-- 是否为打卡 -->
 							<view class="wrapper">
 								<text class="radioLabel">是否为打卡:</text>
-								<label class="radio">
-					        <radio name="radio" value="r1" checked="true"/>否
-					      </label>
-					      <label style="margin-left:50rpx;" class="radio">
-					        <radio name="radio" value="r2" />是
-					      </label>
+						        <radio-group data-index="{{index}}" data-stage="{{0}}" bindchange="radioChange">
+						           <label class="radio"> 
+						              <radio checked="true" value="1" bindchange="radioChange"/>是
+						              <radio value="0" bindchange="radioChange"/>否
+						          </label>
+						        </radio-group>
 							</view>
 						</view>
 			  </view>
@@ -67,7 +67,7 @@
 			<!-- main -->
 			<!-- 增加节点 -->
 			<view>
-				<button type="primary" class="addStage" bindtap="addNode">增加节点</button>
+				<button data-length="{{submitAllData.stage[0].node.length}}" data-part="{{'课前'}}" data-addStage="{{0}}" type="primary" class="addStage" bindtap="addNode">增加节点</button>
 			</view>
 			<!-- 增加节点 end -->
 		</view>
@@ -82,7 +82,7 @@
 		<view class="content">
 			<view wx:for="{{submitAllData.stage[1].node}}" wx:key="{{index}}">
 			  <view wx:if="{{item.part == '课中'}}"> 
-			  		<text class="stage">节点{{item.orderNum}}</text>
+			  		<text class="stage">节点{{index+1}}</text>
 						<!-- main -->
 						<view class="main">
 							<view class="wrapper">
@@ -127,12 +127,12 @@
 							<!-- 是否为打卡 -->
 							<view class="wrapper">
 								<text class="radioLabel">是否为打卡:</text>
-								<label class="radio">
-					        <radio name="radio" value="r1" checked="true"/>否
-					      </label>
-					      <label style="margin-left:50rpx;" class="radio">
-					        <radio name="radio" value="r2" />是
-					      </label>
+						        <radio-group data-index="{{index}}" data-stage="{{1}}" bindchange="radioChange">
+						           <label class="radio"> 
+						              <radio checked="true" value="1" bindchange="radioChange"/>是
+						              <radio value="0" bindchange="radioChange"/>否
+						          </label>
+						        </radio-group>
 							</view>
 						</view>
 			  </view>
@@ -141,7 +141,7 @@
 			<!-- main -->
 			<!-- 增加节点 -->
 			<view>
-				<button type="primary" class="addStage" bindtap="addNode">增加节点</button>
+				<button data-length="{{submitAllData.stage[0].node.length + submitAllData.stage[1].node.length}}" data-part="{{'课中'}}" data-addStage="{{1}}" type="primary" class="addStage" bindtap="addNode">增加节点</button>
 			</view>
 			<!-- 增加节点 end -->
 		</view>
@@ -156,7 +156,7 @@
 		<view class="content">
 			<view wx:for="{{submitAllData.stage[2].node}}" wx:key="{{index}}">
 			  <view wx:if="{{item.part == '课后'}}"> 
-			  		<text class="stage">节点{{item.orderNum}}</text>
+			  		<text class="stage">节点{{index+1}}</text>
 						<!-- main -->
 						<view class="main">
 							<view class="wrapper">
@@ -201,12 +201,12 @@
 							<!-- 是否为打卡 -->
 							<view class="wrapper">
 								<text class="radioLabel">是否为打卡:</text>
-								<label class="radio">
-					        <radio name="radio" value="r1" checked="true"/>否
-					      </label>
-					      <label style="margin-left:50rpx;" class="radio">
-					        <radio name="radio" value="r2" />是
-					      </label>
+						        <radio-group data-index="{{index}}" data-stage="{{2}}" bindchange="radioChange">
+						           <label class="radio"> 
+						              <radio checked="true" value="1" bindchange="radioChange"/>是
+						              <radio value="0" bindchange="radioChange"/>否
+						          </label>
+						        </radio-group>
 							</view>
 						</view>
 			  </view>
@@ -215,7 +215,7 @@
 			<!-- main -->
 			<!-- 增加节点 -->
 			<view>
-				<button type="primary" class="addStage" bindtap="addNode">增加节点</button>
+				<button data-length="{{submitAllData.stage[0].node.length + submitAllData.stage[1].node.length+submitAllData.stage[2].node.length}}"  data-part="{{'课后'}}" data-addStage="{{2}}" type="primary" class="addStage" bindtap="addNode">增加节点</button>
 			</view>
 			<!-- 增加节点 end -->
 		</view>

@@ -164,7 +164,7 @@ const conf = {
   data: {
     userInfo: {},
     hasUserInfo: false,
-    hasProject: true,
+    // hasProject: true,
     /*** 图片区域****/
     // swiper 容器宽度
     swiperContainWidth: 10000,
@@ -174,35 +174,11 @@ const conf = {
     swiperAnimationData:{} ,
     // 跳转到的图片索引 swiperIndex
     swiperIndex: 0 ,
-    // swiperUrls: [{
-    //   'text':'知识分享',
-    //   'time':'3.14',
-    //   'status': '0'
-    //   },{
-    //     'text':'时间管理',
-    //     'time':'3.15',
-    //     'status': '1'
-    //   },{
-    //     'text':'疯狂学习',
-    //     'time':'3.16',
-    //     'status': '1'
-    // }],
-    // processData: [{
-    //   name: '知识分享',
-    //   start: '#fff',
-    //   end: '#EFF3F6'
-    // },
-    // {
-    //   name: '时间管理',
-    //   start: '#EFF3F6',
-    //   end: '#fff'
-    // }],
-    // fixation:[0,1,2],
     bindPunchCard:false,
     bindPunchCardList:[],
     mustChoise: true,
     editbindPunchCard:false,
-    sliderNumber:'5',
+    sliderNumber:'1',
     dataLists:{
       name:'员工领导力培训',
       processTime:'11/12',
@@ -211,25 +187,46 @@ const conf = {
         stateName:'时间管理1',
         stageTime:'3.14',
         stageStage:'课前',
-        stageIndex:'1'
+        stageIndex:'1',
+        location:false
       },{
         stateName:'时间管理1',
         stageTime:'3.14',
         stageStage:'课前',
-        stageIndex:'1'
+        stageIndex:'1',
+        location:false
       },{
         stateName:'时间管理2',
         stageTime:'3.14',
         stageStage:'课中',
-        stageIndex:'2'
+        stageIndex:'2',
+        location:false
       },{
         stateName:'时间管理3',
         stageTime:'3.14',
         stageStage:'课后',
-        stageIndex:'3'
+        stageIndex:'3',
+        location:false
       }]
     },
-    dataListsStageIndex:''
+    punchCardList:{
+      needChoose:'2',
+      hadChoose:'1',
+      stage:[{
+          'stageContentName':'我是活动打卡名1',
+          'stageContentContent':'我是介绍1',
+          'stageMustChoose':false
+        },{
+          'stageContentName':'我是活动打卡名2',
+          'stageContentContent':'我是介绍2',
+          'stageMustChoose':true
+        },{
+          'stageContentName':'我是活动打卡名3',
+          'stageContentContent':'我是介绍3',
+          'stageMustChoose':true
+        }]
+      },
+    dataListsStageIndex:'1'
   },
   onLoad(){
     this.initSwiper()
@@ -273,7 +270,7 @@ const conf = {
       })
     } 
     this.setData({
-      dataListsStageIndex:2
+      dataListsStageIndex:1
     })
   },
   getUserInfo: function(e) {
@@ -311,37 +308,21 @@ const conf = {
       editbindPunchCard:false
     })
   },
-  //进度条的状态
-  setPeocessIcon: function () {
-    var index = 0//记录状态为1的最后的位置
-    var processArr = this.data.processData
-    // console.log("progress", this.data.detailData.progress)
-    for (var i = 0; i < this.data.detailData.progress.length; i++) {
-      var item = this.data.detailData.progress[i]
-      processArr[i].name = item.word
-      if (item.state == 1) {
-        index = i
-        processArr[i].icon = "../../img/process_3.png"
-        processArr[i].start = "#45B2FE"
-        processArr[i].end = "#45B2FE"
-      } else {
-        processArr[i].icon = "../../img/process_1.png"
-        processArr[i].start = "#EFF3F6"
-        processArr[i].end = "#EFF3F6"
-      }
-    }
-    processArr[index].icon = "../../img/process_2.png"
-    processArr[index].end = "#EFF3F6"
-    processArr[0].start = "#fff"
-    processArr[this.data.detailData.progress.length - 1].end = "#fff"
-    this.setData({
-      processData: processArr
+  editProject:function(e){
+    wx.navigateTo({
+      url: 'addProject/addProject'
     })
   },
   //打卡
-  bindPunchCard: function () {
+  bindPunchCard: function (e) {
+    console.log(e.target.dataset.index)
+    console.log(e.target.dataset.location)
+    var key = "dataLists.stage[" + e.target.dataset.index + "].location"
     this.setData({
       bindPunchCard:true
+    })
+    this.setData({
+      [key]:!e.target.dataset.location
     })
   },
   editPunchCard: function () {
