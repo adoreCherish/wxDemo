@@ -1,0 +1,67 @@
+新增打卡是你给我：
+dataLists:{
+      name:'',
+      intro:'',
+      partyMainImg:'',
+      beginTime:'',
+      endTime:'',
+      cycle:'无',
+      type:'必须音频',
+      necessary:'必选',
+      stageOrder:'阶段序号：（数字）',
+      remark:'',
+      projectName:''
+    }
+
+
+打卡列表页：你给我projectName ，我返回
+dataLists:{
+      allNum:'需加入个数',
+      neceNum:'已加入个数'，
+      clockwes:[{
+        id:'',
+        name:'',
+        intro:'',
+        partyMainImg:'',
+        beginTime:'',
+        endTime:'',
+        cycle:'无',
+        type:'必须音频',
+        necessary:'必选',
+        stageOrder:'阶段序号：（数字）',
+        remark:'',
+        projectName:''
+}]}
+
+更新打卡：页面给我这些数据
+dataLists:{
+      id:''
+      name:'',
+      intro:'',
+      partyMainImg:'',
+      beginTime:'',
+      endTime:'',
+      cycle:'无',
+      type:'必须音频',
+      necessary:'必选',
+      stageOrder:'阶段序号：（数字）',
+      remark:''
+    }
+
+打卡详情：你给我打卡id，我返回
+dataLists:{
+      id:''
+      name:'',
+      intro:'',
+      partyMainImg:'',
+      beginTime:'',
+      endTime:'',
+      cycle:'无',
+      type:'必须音频',
+      necessary:'必选',
+      stageOrder:'阶段序号：（数字）',
+      remark:'',
+      projectName:''
+    }
+
+删除：你给我打卡id即可

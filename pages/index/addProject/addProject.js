@@ -21,7 +21,15 @@ Page({
     beginTime: '',
     endTime: '',
     intro:'',
-    submitData:[]
+    submitData:[],
+    dataLists:{
+      companyName:'',
+      name:'',
+      beginTime:'',
+      endTime:'',
+      projectImg:'',
+      projectDescription:''
+    }
   },
   getInputVal: function(e) {
     this.data.submitAllData.push(e.detail)
@@ -76,8 +84,8 @@ Page({
     //     'mediaIds':1
     //   }
     // })
-    this.setData({'submitData.beginTime':this.data.beginTime})
-    this.setData({'submitData.endTime':this.data.endTime})
+    this.setData({'submitData.beginTime':this.data.dataLists.beginTime})
+    this.setData({'submitData.endTime':this.data.dataLists.endTime})
     this.setData({'submitData.intro':e.detail.value.textarea})
     this.setData({'submitData.mediaIds':1})
     this.setData({'submitData.createBy':app.globalData.userInfo.nickName})
@@ -95,16 +103,16 @@ Page({
       },
     })
   },
-  startTimedataChange: function(e) {
+  beginTimedataChange: function(e) {
     console.log('picker发送选择改变，携带值为', e)
     this.setData({
-      beginTime: e.detail.value
+      'dataLists.beginTime': e.detail.value
     })
   },
   endTimedataChange: function(e) {
     console.log('picker发送选择改变，携带值为', e)
     this.setData({
-      endTime: e.detail.value
+      'dataLists.endTime': e.detail.value
     })
   },
   addNewStage:function(){

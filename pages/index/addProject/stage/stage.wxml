@@ -1,4 +1,4 @@
-<form>
+<form bindsubmit="formSubmit">
 	<!-- 课前部分 -->
 	<view class="first all">
 		<view class="header">
@@ -222,6 +222,6 @@
 	</view>
 	<!-- 课后部分 end -->
 	<!-- 发布  -->
-	<button type="primary" bindtap="publishFunc" class="publish">发布</button>
+	<button formType="submit" type="primary" class="publish">发布</button>
 	<!-- 发布 edn -->
 </form>

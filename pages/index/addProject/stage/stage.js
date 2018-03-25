@@ -10,9 +10,18 @@ Page({
     // clockNeed:'',
     submitAllData:[]
   },
-  publishFunc:function(){
-    wx.navigateBack({
-      delta: 1
+  formSubmit:function(e){
+    console.log('formSubmit here')
+    console.log(this.data.submitAllData.name)
+    // console.log('项目名称:' + )
+    wx.reLaunch({
+      url: '/pages/index/index?projectName='+this.data.submitAllData.name,
+      success:function(res){
+        console.log(res)
+      },
+      fail:function(err){
+        console.log(err)
+      }
     })
   },
   bindKeyInput:function(e){
@@ -35,6 +44,8 @@ Page({
     console.log(option.submitData)
     option.submitData = JSON.parse(option.submitData)
     // submitData={"companyName":"1","name":"2","beginTime":"2018-05-23","endTime":"2018-06-23","intro":"","mediaIds":1,"createBy":"apart"}
+    this.setData({'submitAllData.companyName':option.submitData.companyName})
+    this.setData({'submitAllData.name':option.submitData.name})
     this.setData({'submitAllData.beginTime':option.submitData.beginTime})
     this.setData({'submitAllData.endTime':option.submitData.endTime})
     this.setData({'submitAllData.intro':option.submitData.intro})
@@ -96,7 +107,6 @@ Page({
     // console.log(e.target.dataset.addstage)
     // var index = +e.target.dataset.addstage+1
     var length = e.target.dataset.length
-    console.log(length)
     var nodes = this.data.submitAllData.stage[e.target.dataset.addstage].node;
     // console.log(nodes)
     nodes.push({
@@ -115,13 +125,6 @@ Page({
     this.setData({[stagekey1]:this.data.submitAllData.stage[0].node.length+1})
     var stagekey2 = 'submitAllData.stage[2].node[0].orderNum'
     this.setData({[stagekey2]:this.data.submitAllData.stage[0].node.length+this.data.submitAllData.stage[1].node.length+1})
-  },
-  publishFunc:function(e){
-    console.log(e.submitData)
-    console.log(this.data.submitAllData)
-    // 发送ajax请求
-    wx.navigateBack({
-      delta:1
-    })
+    console.log()
   }
 })

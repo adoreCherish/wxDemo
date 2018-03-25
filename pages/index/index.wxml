@@ -11,10 +11,10 @@
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
     <view>
       <text class="userInfoNickName">{{userInfo.nickName}}管理员,你好</text>
-      <text wx:if="{{hasProject}}" class="userDescription">欢迎来到{{dataLists.name}}</text>
+      <text wx:if="{{dataLists.stage.length!=0}}" class="userDescription">欢迎来到{{projectName}}</text>
       <text wx:else class="userDescription">欢迎来到本项目的学习地图</text>
     </view>
-    <view class="progress" wx:if="{{hasProject}}">
+    <view class="progress" wx:if="{{dataLists.stage.length!=0}}">
       <text class="content">{{dataLists.processTime}}</text>
       <text class="static">进度</text>
     </view>
@@ -74,7 +74,7 @@
           <view class="header">
             <text class="left">我管理的打卡</text>
             <view class="left subTitle">
-              <text>学生需加入<text class="number">{{punchCardList.needChoose}}</text>个,已加入</text><text class="number">{{punchCardList.hadChoose}}</text>个
+              <text>学生需加入<text class="number">{{punchCardList.allNum}}</text>个,已加入</text><text class="number">{{punchCardList.neceNum}}</text>个
             </view>
             <view class="right">
               <button bindtap="editPunchCard">编辑</button>
@@ -84,23 +84,23 @@
             <view class="stageHead">
               <text>阶段一</text>
             </view>
-            <view wx:for="{{punchCardList.stage}}" wx:key="{{index}}" style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
+            <view wx:for="{{punchCardList.clockers}}" wx:key="{{index}}" style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
               <image wx:if="{{editbindPunchCard}}" class="changeLocation" src="../../images/changeLocation.png"/>
               <image class="stageImg" src=""/>
               <view class="stageContent">
                 <view class="stageContent-name">
-                  <text>{{item.stageContentName}}</text>
+                  <text>{{item.name}}</text>
                 </view>
                 <view class="stageContent-content">
-                  <text>{{item.stageContentContent}}</text>
+                  <text>{{item.intro}}</text>
                 </view>
                 <view>
                   <button style="border:1rpx solid {{mustChoise ? '#4286f5;' : '#3eb85f;'}} color:{{mustChoise ? '#4286f5;' : '#3eb85f;'}}" class="choise">必选</button>
                 </view>
               </view>
               <view class="operation">
-                <image wx:if="{{!editbindPunchCard}}" src="../../images/delete.png"/>
-                <image class="edit" wx:else src="../../images/edit.png"/>
+                <image data-id="{{item.id}}" bindtap="deletePunchCardIdFunc" wx:if="{{!editbindPunchCard}}" src="../../images/delete.png"/>
+                <image bindtap="editPunchCardIdFunc" data-id="{{item.id}}" class="edit" wx:else src="../../images/edit.png"/>
               </view>
             </view>
           </view>

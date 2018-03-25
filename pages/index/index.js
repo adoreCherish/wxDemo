@@ -210,26 +210,60 @@ const conf = {
       }]
     },
     punchCardList:{
-      needChoose:'2',
-      hadChoose:'1',
-      stage:[{
-          'stageContentName':'我是活动打卡名1',
-          'stageContentContent':'我是介绍1',
-          'stageMustChoose':false
+      allNum:'3',
+      neceNum:'1',
+      clockers:[{
+          'id':'1',
+          'name':'我是活动打卡名1',
+          'intro':'介绍1',
+          'partyMainImg':'',
+          'beginTime':'',
+          'endTime':'',
+          'cycle':'',
+          'type':'',
+          'necessary':'',
+          'stageOrder':'',
+          'remark':'',
+          'projectName':''
+          // 'stageMustChoose':false
         },{
-          'stageContentName':'我是活动打卡名2',
-          'stageContentContent':'我是介绍2',
-          'stageMustChoose':true
+          'id':'2',
+          'name':'我是活动打卡名2',
+          'intro':'介绍2',
+          'partyMainImg':'',
+          'beginTime':'',
+          'endTime':'',
+          'cycle':'',
+          'type':'',
+          'necessary':'',
+          'stageOrder':'',
+          'remark':'',
+          'projectName':''
+          // 'stageMustChoose':false
         },{
-          'stageContentName':'我是活动打卡名3',
-          'stageContentContent':'我是介绍3',
-          'stageMustChoose':true
+          'id':'3',
+          'name':'我是活动打卡名3',
+          'intro':'介绍3',
+          'partyMainImg':'',
+          'beginTime':'',
+          'endTime':'',
+          'cycle':'',
+          'type':'',
+          'necessary':'',
+          'stageOrder':'',
+          'remark':'',
+          'projectName':''
+          // 'stageMustChoose':false
         }]
       },
-    dataListsStageIndex:'1'
+    dataListsStageIndex:'1',
+    projectName:''
   },
-  onLoad(){
+  onLoad(option){
     this.initSwiper()
+    console.log(option.projectName)
+    option.projectName ? this.setData({'projectName': option.projectName}) : ''
+    console.log(this.data.projectName)
     var self = this
     wx.getUserInfo({
       success: function(res) {
@@ -289,12 +323,12 @@ const conf = {
   },
   addNew: function (){
     wx.navigateTo({
-      url: 'addPunchCard/addPunchCard'
+      url: 'addPunchCard/addPunchCard?projectName='+this.data.projectName
     })
   },
   historyPunchCardFunc:function(){
     wx.navigateTo({
-      url: 'historyPunchCard/historyPunchCard'
+      url: 'historyPunchCard/historyPunchCard?projectName='+this.data.projectName
     })
   },
   sliderChange: function(e){
@@ -330,6 +364,14 @@ const conf = {
     this.setData({
       editbindPunchCard:true
     })
+  },
+  editPunchCardIdFunc:function(e){
+    wx.navigateTo({
+      url: 'addPunchCard/addPunchCard?id=' + e.target.dataset.id +'&projectName=' + this.data.projectName
+    })
+  },
+  deletePunchCardIdFunc:function(e){
+    console.log('删除: ' + e.target.dataset.id)
   },
   onShow(){
     var that = this

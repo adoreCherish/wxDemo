@@ -1,4 +1,4 @@
-<form class="punchCard">
+<form class="punchCard" bindsubmit="formSubmit">
 	<view>
 	  <lists class="lists" lists="{{lists}}" bind:inputValue="getInputVal"></lists>
 	</view>
@@ -23,18 +23,18 @@
 				<text class="title">项目时间</text>
 			</view>
 			<view class="rightContent">
-				<picker class="picker" mode="date" value="startTime" bindchange="startTimedataChange">
+				<picker class="picker" mode="date" value="{{dataLists.beginTime}}" bindchange="beginTimedataChange">
 			    <view>
-			      <text class="text" wx:if="{{startTime}}">{{startTime}}</text>
+			      <text class="text" wx:if="{{dataLists.beginTime}}">{{dataLists.beginTime}}</text>
 			    	<text class="text" wx:else>请选择开始时间</text>
 			    	<view class="navigator">
 					    <view class="navigator-arrow"></view>
 					</view>
 			    </view>
 				</picker>
-				<picker class="picker" mode="date" value="endTime" bindchange="startTimedataChange">
+				<picker class="picker" mode="date" value="{{dataLists.endTime}}" bindchange="endTimedataChange">
 			    <view>
-			      <text class="text" wx:if="{{endTime}}">{{endTime}}</text>
+			      <text class="text" wx:if="{{dataLists.endTime}}">{{dataLists.endTime}}</text>
 			    	<text class="text" wx:else>请选择结束时间</text>
 			    	<view class="navigator">
 					    <view class="navigator-arrow"></view>
@@ -45,7 +45,7 @@
 		</view>	
 	</view>
 	<view class="specailPicker">
-		<picker class="picker" range="{{punchCardFrequency}}" value="{{punchCardFrequencyIndex}}" bindchange="bindpunchCardFrequency">
+		<picker class="picker" range="{{punchCardFrequency}}" value="{{punchCardFrequency[dataLists.cycle]}}" bindchange="bindpunchCardFrequency">
 		    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
 				<view class="left">
 					<image src=""/>
@@ -55,13 +55,13 @@
 				</view>
 				<view class="rightContent">
 			    	<view class="navigator">
-			    		<view class="navigator-text">{{punchCardFrequency[punchCardFrequencyIndex]}}</view>
+			    		<view class="navigator-text">{{punchCardFrequency[dataLists.cycle]}}</view>
 					    <view class="navigator-arrow"></view>
 					</view>
 				</view>
 		    </view>
 		</picker>
-		<picker class="picker" range="{{punchCardRequire}}" value="{{punchCardRequireIndex}}" bindchange="bindpunchCardRequire">
+		<picker class="picker" range="{{punchCardRequire}}" value="{{punchCardRequire[dataLists.type]}}" bindchange="bindpunchCardRequire">
 	    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
 				<view class="left">
 					<image src=""/>
@@ -71,13 +71,13 @@
 				</view>
 				<view class="rightContent">
 			    	<view class="navigator">
-			    		<view class="navigator-text">{{punchCardRequire[punchCardRequireIndex]}}</view>
+			    		<view class="navigator-text">{{punchCardRequire[dataLists.type]}}</view>
 					    <view class="navigator-arrow"></view>
 					</view>
 				</view>
 	    </view>
 		</picker>
-		<picker class="picker" range="{{punchCardMust}}" value="{{punchCardMustIndex}}" bindchange="bindpunchCardMust">
+		<picker class="picker" range="{{punchCardMust}}" value="{{punchCardMust[dataLists.necessary]}}" bindchange="bindpunchCardMust">
 	    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
 				<view class="left">
 					<image src=""/>
@@ -87,13 +87,13 @@
 				</view>
 				<view class="rightContent">
 		    	<view class="navigator">
-		    		<view class="navigator-text">{{punchCardMust[punchCardMustIndex]}}</view>
+		    		<view class="navigator-text">{{punchCardMust[dataLists.necessary]}}</view>
 				    <view class="navigator-arrow"></view>
 				</view>
 			</view>
 	    </view>
 		</picker>
-		<picker class="picker" range="{{punchCardChose}}" value="{{punchCardChoseIndex}}" bindchange="bindpunchCardChose">
+		<picker class="picker" range="{{punchCardChose}}" value="{{punchCardChose[dataLists.stageOrder]}}" bindchange="bindpunchCardChose">
 	    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
 				<view class="left">
 					<image src=""/>
@@ -103,7 +103,7 @@
 				</view>
 				<view class="rightContent">
 			    	<view class="navigator">
-			    		<view class="navigator-text">{{punchCardChose[punchCardChoseIndex]}}</view>
+			    		<view class="navigator-text">{{punchCardChose[dataLists.stageOrder]}}</view>
 					    <view class="navigator-arrow"></view>
 					</view>
 				</view>
@@ -119,7 +119,7 @@
 			<view class="rightContent">
 				<view class="content">
 					<!-- auto-focus="true" -->
-					<textarea placeholder="请输入打卡内容" placeholder-style="font-family:'PingFangSC-Regular';font-size:24rpx;color:#aaa9ae;"/>
+					<textarea name="textarea" value="{{dataLists.remark}}" placeholder="请输入打卡内容" placeholder-style="font-family:'PingFangSC-Regular';font-size:24rpx;color:#aaa9ae;"/>
 				</view>
 			</view>
 		</view>
@@ -139,6 +139,6 @@
 		</view>
 	</view>
 	<view class="footer">
-		<button bindtap="gotoIndex">发布</button>
+		<button formType="submit">发布</button>
 	</view>
 </form>
